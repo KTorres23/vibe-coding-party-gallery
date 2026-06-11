@@ -25,7 +25,7 @@ const description = descriptionMatch ? descriptionMatch[1].trim() : '';
 
 // Look for file URLs in the issue body
 const fileUrls = [];
-const fileRegex = /\]\((https:\/\/github\.com\/[^\)]+)\)/g;
+const fileRegex = /(https:\/\/(?:github\.com|githubusercontent\.com)[^\s\)]+)/g;
 let match;
 while ((match = fileRegex.exec(issueBody)) !== null) {
     fileUrls.push(match[1]);

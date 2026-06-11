@@ -156,10 +156,11 @@
                     <label><input type="radio" name="subType" value="link"> External Link</label>
                 </div>
 
-                <!-- Project Upload Fields -->
-                <div id="uploadSection" class="drag-drop-zone">
-                    <p>Drag & Drop your project files (.zip or source files) here or click to browse.</p>
-                    <input type="file" id="fileUpload" class="hidden-input" multiple>
+                <!-- Project Upload Instructions -->
+                <div id="uploadSection" class="drag-drop-zone" style="border-style: dashed; border-color: var(--accent-color); background: rgba(59, 130, 246, 0.05);">
+                    <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">⚠️ Next Step Required</h4>
+                    <p>Since this is a static site, you cannot upload files directly here.</p>
+                    <p style="margin-top: 0.5rem;">When you click <strong>Submit Project</strong>, a GitHub Issue will open. <strong>Please drag and drop your project .zip file into the GitHub Issue body!</strong></p>
                 </div>
 
                 <div id="linkSection" class="form-group hidden">
