@@ -1,5 +1,16 @@
 [
     {
+        "id": 1781195976951,
+        "title": "Ecology Vibe Coding",
+        "author": "Karina Torres",
+        "authorLink": "http://ktorres23.github.io",
+        "party": "other",
+        "description": "A goofy little repo blending ecology and AI with pure vibe-coding energy.\n\n### 🌟 Core Features\n* **iNat Suite**: Web tools to query taxa, annotate traits, and use CLIP models to explore hidden secondary data.\n* **TAMU Job Board**: A serverless dashboard tracking ecology jobs, automated via GitHub Actions.\n* **Local Scripts**: Quick image cropping and custom GBIF mapping.",
+        "screenshot": "",
+        "url": "https://ktorres23.github.io/ecology-vibe-coding/",
+        "type": "link"
+    },
+    {
         "id": 1,
         "title": "Kelp Forest Simulator",
         "author": "MarineCoder",
