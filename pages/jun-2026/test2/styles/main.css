@@ -1,0 +1,195 @@
+/* main.css */
+/* Main stylesheet for all site pages */
+
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffffff 0%, #e0ddd7 100%);
+    color: #353334;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-color: #6c0633;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+main {
+    padding: 2rem;
+    text-align: center;
+    flex: 1 0  auto;
+}
+
+
+
+/* Footer Styling */
+.footer {
+    background: #6c0633;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+.footer a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer a:hover {
+    color: #d2a416;
+    text-decoration: underline;
+}
+
+
+    
+/* Project sidebar for header */
+.sidebar_icon {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.sidebar_icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #6c0633;
+}
+
+.sidebar_box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background: #353334;
+    color: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.sidebar_box.open {
+    transform: translateX(0);
+}
+
+.sidebar_box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar_box li {
+    padding: 16px 24px;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar_box a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+body {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar_box.open ~ body {
+    margin-left: 250px;
+}
+
+/* Jobs grid and card styles */
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.job-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 6px 18px rgba(20,20,20,0.06);
+    text-align: left;
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.job-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+}
+
+.job-card h3 a {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+.job-card h3 a:hover {
+    color: #6c0633;
+    text-decoration: underline;
+}
+
+.job-location {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.job-description {
+    flex: 1 0 auto;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.job-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.job-apply {
+    background: #6c0633;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.job-apply:hover {
+    background: #5a0529;
+}
+
+/* Small screen tweaks */
+@media (max-width: 520px) {
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+}
