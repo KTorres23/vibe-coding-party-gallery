@@ -133,6 +133,11 @@ function renderGallery() {
             ? `<a href="${project.authorLink}" target="_blank" class="author-link">${project.author}</a>`
             : project.author;
 
+        let linkText = 'View External Project ↗';
+        if (project.type === 'hosted') linkText = 'Play Hosted Project →';
+        else if (project.type === 'download') linkText = 'Download Source Code ⬇️';
+        else if (project.type === 'upload') linkText = 'Download Project ⬇️'; // Legacy fallback
+
         // Render card content
         card.innerHTML = `
             <img class="project-screenshot" src="${project.screenshot || generateGradientSvg(project.title, project.party)}" alt="${project.title} Screenshot">
@@ -142,7 +147,7 @@ function renderGallery() {
             </div>
             <p class="author">by ${authorDisplay}</p>
             <div class="desc-content">${parseMarkdown(project.description)}</div>
-            <p><a href="${project.url}" target="_blank">${project.type === 'link' ? 'View External Project ↗' : 'View Hosted Project →'}</a></p>
+            <p><a href="${project.url}" target="_blank">${linkText}</a></p>
         `;
         galleryContainer.appendChild(card);
     });

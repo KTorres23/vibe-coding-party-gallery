@@ -58,18 +58,66 @@ const downloadFile = (fileUrl, dest) => {
     });
 };
 
+const { execSync } = require('child_process');
+
 (async () => {
     let imgExt = '.png';
+    let localZipDest = '';
+    
     for (const fileUrl of fileUrls) {
         if (fileUrl.match(/\.(png|jpg|jpeg|gif)/i) || fileUrl.includes('/assets/')) {
             const dest = path.join(projectDir, 'screenshot' + imgExt);
             await downloadFile(fileUrl, dest);
             screenshotPath = `projects/${party}/${slug}/screenshot${imgExt}`;
         } else if (fileUrl.match(/\.zip/i) || fileUrl.includes('/files/')) {
-            const dest = path.join(projectDir, 'project.zip');
-            await downloadFile(fileUrl, dest);
-            projectZipPath = `projects/${party}/${slug}/project.zip`;
+            localZipDest = path.join(projectDir, 'project.zip');
+            await downloadFile(fileUrl, localZipDest);
         }
+    }
+
+    let finalType = type;
+    let finalUrl = url;
+
+    // Intelligent ZIP extraction logic
+    if (type === 'upload' && localZipDest && fs.existsSync(localZipDest)) {
+        try {
+            // Check if zip contains an HTML file
+            const zipList = execSync(`unzip -l "${localZipDest}"`).toString();
+            if (zipList.match(/\.html(\s|$)/i)) {
+                // It's a hosted project!
+                finalType = 'hosted';
+                const pagesDir = path.join(__dirname, '../../pages', party, slug);
+                if (!fs.existsSync(pagesDir)) {
+                    fs.mkdirSync(pagesDir, { recursive: true });
+                }
+                
+                // Extract to pages folder
+                execSync(`unzip -o "${localZipDest}" -d "${pagesDir}"`);
+                
+                // Remove the zip file from projects dir to keep repo tidy
+                fs.unlinkSync(localZipDest);
+
+                // Find the primary HTML file
+                const extractOutput = execSync(`find "${pagesDir}" -name "*.html"`).toString().split('\n').filter(Boolean);
+                const indexFile = extractOutput.find(f => f.toLowerCase().endsWith('index.html')) || extractOutput[0];
+                
+                // Convert absolute path to relative URL for GitHub Pages
+                finalUrl = indexFile.replace(path.join(__dirname, '../../'), '').replace(/\\/g, '/');
+                if (finalUrl.startsWith('/')) finalUrl = finalUrl.substring(1); // remove leading slash
+            } else {
+                // Source code only
+                finalType = 'download';
+                finalUrl = `projects/${party}/${slug}/project.zip`;
+            }
+        } catch (e) {
+            console.error("Error processing zip:", e);
+            finalType = 'download';
+            finalUrl = `projects/${party}/${slug}/project.zip`;
+        }
+    } else if (type === 'upload') {
+        // Fallback if no zip was found
+        finalType = 'download';
+        finalUrl = '#';
     }
 
     const projectsFile = path.join(__dirname, '../../projects.json');
@@ -86,8 +134,8 @@ const downloadFile = (fileUrl, dest) => {
         party,
         description,
         screenshot: screenshotPath,
-        url: type === 'upload' && projectZipPath ? projectZipPath : url,
-        type
+        url: finalUrl,
+        type: finalType
     };
 
     projects.unshift(newProject);
