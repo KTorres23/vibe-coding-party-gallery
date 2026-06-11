@@ -1,5 +1,16 @@
 [
     {
+        "id": 1781199140838,
+        "title": "Test2",
+        "author": "Karina Torres",
+        "authorLink": "http://ktorres23.github.io",
+        "party": "jun-2026",
+        "description": "Test2",
+        "screenshot": "",
+        "url": "pages/jun-2026/test2/index.html",
+        "type": "hosted"
+    },
+    {
         "id": 1781195976951,
         "title": "Ecology Vibe Coding",
         "author": "Karina Torres",
