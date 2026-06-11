@@ -1,5 +1,16 @@
 [
     {
+        "id": 1781197391532,
+        "title": "Old TAMU Job Dashboard",
+        "author": "Karina Torres",
+        "authorLink": "https://ktorres23.github.io",
+        "party": "other",
+        "description": "An automated tracking dashboard for the **TAMU Natural Resources Job Board**. This is the original, gritty vibe-coded prototype built to run seamlessly via a **local backend** before the project transitioned to the cloud!\n\n### ✨ Core Features & Vibe\n* **Automated Tracking:** Keeps a steady pulse on ecology job openings.\n* **Pure Vibe Energy:** A scrappy, local setup built fast via AI collaboration.\n\n*Note: The upgraded, web-based version is now live on my website!*",
+        "screenshot": "",
+        "url": "#",
+        "type": "download"
+    },
+    {
         "id": 1781195976951,
         "title": "Ecology Vibe Coding",
         "author": "Karina Torres",
