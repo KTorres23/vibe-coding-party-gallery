@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "title": "Kelp Forest Simulator",
+        "author": "MarineCoder",
+        "authorLink": "https://github.com/marine-coder",
+        "party": "jun-2026",
+        "description": "An interactive canvas simulation showing **kelp growth rates** based on nutrient values, ambient temperature, and sea urchin populations. Built entirely using vibe coding in `p5.js`!\n\n### Key Features:\n- Real-time parameter controls\n- Dynamic ecosystem balancing\n- Beautiful organic movements",
+        "screenshot": "",
+        "url": "https://example.com/kelp",
+        "type": "link"
+    },
+    {
+        "id": 2,
+        "title": "Bioluminescent UI",
+        "author": "GlowWorm",
+        "authorLink": "https://twitter.com/glow_worm",
+        "party": "jun-2026",
+        "description": "A dark-mode dashboard tailored for *deep-sea exploration* data visualization. Features custom glow-effects in CSS and simulated real-time telemetry inputs.\n\nCreated during the Deep Ocean vibe party in Jan.",
+        "screenshot": "",
+        "url": "#",
+        "type": "upload"
+    },
+    {
+        "id": 3,
+        "title": "Canopy Tracker",
+        "author": "TreeHugger99",
+        "authorLink": "",
+        "party": "jul-2026",
+        "description": "A geospatial visualizer mapping forest canopy height using public satellite datasets. Helps track **deforestation** and canopy recovery over time. Uses `Leaflet.js` for mapping.",
+        "screenshot": "",
+        "url": "https://example.com/canopy",
+        "type": "link"
+    }
+]

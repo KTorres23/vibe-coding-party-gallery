@@ -1,0 +1,36 @@
+name: Process Project Submission
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  process-submission:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, '[Submission]')
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Parse Issue and Update Projects
+        run: node .github/scripts/process_issue.js
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Add new project from issue #${{ github.event.issue.number }}"
+          title: "New Project Submission: ${{ github.event.issue.title }}"
+          body: "Automated PR from issue #${{ github.event.issue.number }}."
+          branch: "submission-${{ github.event.issue.number }}"

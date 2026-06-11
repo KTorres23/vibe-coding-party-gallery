@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery for Vibe Coding Parties</title>
+    <meta name="description" content="A gallery of vibe-coded projects from our monthly parties.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="glass-header">
+        <div class="header-logo-group">
+            <h1>Gallery for Vibe Coding Parties</h1>
+            <p>A gallery of vibe-coded projects created at vibe coding parties!</p>
+        </div>
+        <nav class="nav-tabs">
+            <button id="tabGallery" class="tab-btn active">Projects Gallery</button>
+            <button id="tabLearn" class="tab-btn">Learn More</button>
+        </nav>
+        <button id="submitBtn" class="btn-primary">Share Project</button>
+    </header>
+
+    <main>
+        <!-- Gallery Section -->
+        <section id="galleryView" class="tab-content">
+            <div class="filters" style="display: flex; gap: 1rem;">
+                <div>
+                    <label for="partyFilter">Filter by Party:</label>
+                    <select id="partyFilter">
+                        <option value="all">All Parties</option>
+                        <option value="ocean">Deep Ocean (Jan)</option>
+                        <option value="forest">Rainforest (Feb)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="typeFilter">Project Type:</label>
+                    <select id="typeFilter">
+                        <option value="all">All Projects</option>
+                        <option value="upload">Hosted Here</option>
+                        <option value="link">External Link</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="gallery" id="galleryContainer">
+                <!-- Project Cards generated dynamically -->
+            </div>
+        </section>
+
+        <!-- Learn More Section -->
+        <section id="learnView" class="tab-content hidden">
+            <div class="learn-hero glass-panel">
+                <h2>Vibe Coding Guidebook</h2>
+                <p>Welcome to the era of pure creation. Focus on the vision, design, and vibes; let AI handle the heavy
+                    lifting.</p>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card glass-panel">
+                    <div class="card-icon">🌊</div>
+                    <h3>What is Vibe Coding?</h3>
+                    <p>Vibe coding is a development philosophy where the programmer steps into the role of a creative
+                        director. Using state-of-the-art AI code generators, you dictate layout ideas, desired
+                        mechanics, and design languages, guiding the model through iterative prompting rather than
+                        manual keyboard typing.</p>
+                </div>
+
+                <div class="learn-card glass-panel">
+                    <div class="card-icon">🚀</div>
+                    <h3>How to Get Started</h3>
+                    <p>To begin vibe coding, choose a modern AI assistant. Start by explaining your project goals in
+                        plain language, design rules, and visual style. Feed files directly to the model, run its
+                        suggestions in your browser, and prompt it to polish, fix bugs, or add details until you are
+                        completely satisfied.</p>
+                </div>
+
+                <div class="learn-card glass-panel">
+                    <div class="card-icon">🎉</div>
+                    <h3>Vibe Coding Parties</h3>
+                    <p>Every month, we host themed hackathons where creators build biological, ecological, or aesthetic
+                        projects in just a few hours. No prior programming background is required! It's a space for
+                        scientists, artists, and creators to bring concepts to life in a collaborative, energetic
+                        environment.</p>
+                </div>
+
+                <div class="learn-card glass-panel">
+                    <div class="card-icon">🙌</div>
+                    <h3>How to Get Involved</h3>
+                    <p>Ready to join? You can attend our monthly physical meetups, hop into our community channels, or
+                        build on your own using the themes listed in this gallery. Simply click the "Share Project"
+                        button at the top to contribute your vibe-coded masterpiece!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 2rem; margin-top: 2rem; color: rgba(50, 52, 55, 0.31); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p>✨ <strong>Disclaimer:</strong> This entire website—including the design, logic, and automated GitHub
+            workflows—was built entirely through vibe coding!</p>
+        <p style="margin-top: 0.5rem;">Created by Karina Torres. <a href="https://ktorres23.github.io" target="_blank"
+                style="color: var(--accent-color); text-decoration: none;">Contact me</a></p>
+    </footer>
+
+    <!-- Submission Modal -->
+    <div id="submissionModal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <span class="close-btn">&times;</span>
+            <h2>Share Your Project</h2>
+            <form id="submissionForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="projectName">Project Title</label>
+                        <input type="text" id="projectName" required placeholder="e.g. Coral Reef Simulator">
+                    </div>
+                    <div class="form-group">
+                        <label for="authorName">Author / Credits</label>
+                        <input type="text" id="authorName" required placeholder="Your name or handle">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="authorLink">Author Website / Profile URL (Optional)</label>
+                        <input type="url" id="authorLink" placeholder="https://github.com/yourusername">
+                    </div>
+                    <div class="form-group">
+                        <label for="partySelect">Vibe Coding Party</label>
+                        <select id="partySelect" required>
+                            <option value="ocean">Deep Ocean (Jan)</option>
+                            <option value="forest">Rainforest (Feb)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDesc">Project Description (Markdown supported)</label>
+                    <textarea id="projectDesc" rows="4" maxlength="500"
+                        placeholder="Describe the vibe, core features, or libraries used. You can use **bold**, *italics*, `code blocks`, lists, and [links](url)."></textarea>
+                    <div class="desc-footer"
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.85rem;">
+                        <span id="charCount" style="color: #64748b;">0 / 500 characters</span>
+                        <button type="button" id="copyPromptBtn" class="btn-secondary"
+                            style="font-size: 0.8rem; padding: 0.3rem 0.6rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-color); color: var(--accent-color); cursor: pointer; transition: all 0.2s ease;">Copy
+                            LLM Prompt 🤖</button>
+                    </div>
+                </div>
+
+                <div class="submission-type-toggle">
+                    <label><input type="radio" name="subType" value="upload" checked> Upload Project Files</label>
+                    <label><input type="radio" name="subType" value="link"> External Link</label>
+                </div>
+
+                <!-- Project Upload Fields -->
+                <div id="uploadSection" class="drag-drop-zone">
+                    <p>Drag & Drop your project files (.zip or source files) here or click to browse.</p>
+                    <input type="file" id="fileUpload" class="hidden-input" multiple>
+                </div>
+
+                <div id="linkSection" class="form-group hidden">
+                    <label for="projectUrl">Project URL</label>
+                    <input type="url" id="projectUrl" placeholder="https://github.com/your/project">
+                </div>
+
+                <!-- Optional Screenshot Upload -->
+                <div class="form-group">
+                    <label>Project Screenshot (Optional)</label>
+                    <div id="screenshotZone" class="drag-drop-zone mini-zone">
+                        <p id="screenshotText">Click to upload or drag screenshot image here</p>
+                        <input type="file" id="screenshotUpload" accept="image/*" class="hidden-input">
+                    </div>
+                    <div id="screenshotPreviewContainer" class="hidden">
+                        <img id="screenshotPreview" src="" alt="Screenshot preview">
+                        <button type="button" id="removeScreenshotBtn" class="btn-danger-link">Remove Image</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary w-full">Submit Project</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
