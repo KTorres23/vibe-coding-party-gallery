@@ -94,6 +94,14 @@ const { execSync } = require('child_process');
                 // Extract to pages folder
                 execSync(`unzip -o "${localZipDest}" -d "${pagesDir}"`);
                 
+                // CRITICAL: Remove any nested .git directories from the extracted files 
+                // so they don't break the parent repository's git status or create submodules!
+                try {
+                    execSync(`find "${pagesDir}" -name ".git" -type d -exec rm -rf {} +`);
+                } catch(e) {
+                    // Ignore errors if no .git directory was found
+                }
+                
                 // Remove the zip file from projects dir to keep repo tidy
                 fs.unlinkSync(localZipDest);
 
