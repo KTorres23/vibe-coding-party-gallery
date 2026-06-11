@@ -370,8 +370,8 @@ ${description}
     // Create the pre-filled GitHub Issue URL
     const issueUrl = `https://github.com/KTorres23/vibe-coding-party-gallery/issues/new?title=${encodeURIComponent("[Submission] " + title)}&body=${encodeURIComponent(issueBody)}`;
     
-    // Open the Issue template in a new tab
-    window.open(issueUrl, '_blank');
+    // Navigate directly to the Issue template to avoid popup blockers
+    window.location.href = issueUrl;
 
     // Add to local data to show immediate feedback on the current page
     mockProjects.unshift({
