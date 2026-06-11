@@ -26,6 +26,16 @@ jobs:
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
 
+      - name: Debug Git Status
+        run: |
+          echo "Checking git status..."
+          git status
+          echo "Attempting to add files..."
+          git add -A
+          echo "Status after add:"
+          git status
+
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
