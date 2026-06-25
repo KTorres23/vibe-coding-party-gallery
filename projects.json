@@ -1,27 +1,5 @@
 [
-    {
-        "id": 1781199873895,
-        "title": "Test3",
-        "author": "Karina Torres",
-        "authorLink": "http://ktorres23.github.io",
-        "party": "jun-2026",
-        "description": "Test3",
-        "screenshot": "",
-        "url": "pages/jun-2026/test3/index.html",
-        "type": "hosted"
-    },
-    {
-        "id": 1781199140838,
-        "title": "Test2",
-        "author": "Karina Torres",
-        "authorLink": "http://ktorres23.github.io",
-        "party": "jun-2026",
-        "description": "Test2",
-        "screenshot": "",
-        "url": "pages/jun-2026/test2/index.html",
-        "type": "hosted"
-    },
-    {
+        {
         "id": 1781195976951,
         "title": "Ecology Vibe Coding",
         "author": "Karina Torres",
@@ -30,39 +8,6 @@
         "description": "A goofy little repo blending ecology and AI with pure vibe-coding energy.\n\n### 🌟 Core Features\n* **iNat Suite**: Web tools to query taxa, annotate traits, and use CLIP models to explore hidden secondary data.\n* **TAMU Job Board**: A serverless dashboard tracking ecology jobs, automated via GitHub Actions.\n* **Local Scripts**: Quick image cropping and custom GBIF mapping.",
         "screenshot": "",
         "url": "https://ktorres23.github.io/ecology-vibe-coding/",
-        "type": "link"
-    },
-    {
-        "id": 1,
-        "title": "Kelp Forest Simulator",
-        "author": "MarineCoder",
-        "authorLink": "https://github.com/marine-coder",
-        "party": "jun-2026",
-        "description": "An interactive canvas simulation showing **kelp growth rates** based on nutrient values, ambient temperature, and sea urchin populations. Built entirely using vibe coding in `p5.js`!\n\n### Key Features:\n- Real-time parameter controls\n- Dynamic ecosystem balancing\n- Beautiful organic movements",
-        "screenshot": "",
-        "url": "https://example.com/kelp",
-        "type": "link"
-    },
-    {
-        "id": 2,
-        "title": "Bioluminescent UI",
-        "author": "GlowWorm",
-        "authorLink": "https://twitter.com/glow_worm",
-        "party": "jun-2026",
-        "description": "A dark-mode dashboard tailored for *deep-sea exploration* data visualization. Features custom glow-effects in CSS and simulated real-time telemetry inputs.\n\nCreated during the Deep Ocean vibe party in Jan.",
-        "screenshot": "",
-        "url": "#",
-        "type": "upload"
-    },
-    {
-        "id": 3,
-        "title": "Canopy Tracker",
-        "author": "TreeHugger99",
-        "authorLink": "",
-        "party": "jul-2026",
-        "description": "A geospatial visualizer mapping forest canopy height using public satellite datasets. Helps track **deforestation** and canopy recovery over time. Uses `Leaflet.js` for mapping.",
-        "screenshot": "",
-        "url": "https://example.com/canopy",
         "type": "link"
     }
 ]
