@@ -1,5 +1,16 @@
 [
-        {
+    {
+        "id": 1783444404701,
+        "title": "Eco & Evo Jobs",
+        "author": "Caleb Charpentier",
+        "authorLink": "https://calebcharpentier.com/",
+        "party": "other",
+        "description": "## Eco & Evo Jobs: A Curated Career Hub\n\nThe Eco & Evo Jobs portal is a streamlined, user-focused dashboard for researchers. With a sleek dark-mode aesthetic, it aggregates over 2,000 listings from specialized sources like EvolDir and Science Careers.\n\n**Core Features:**\n* **Precision Filtering:** Sort by date, institution, or deadline.\n* **Real-Time Data:** Updated daily for active opportunities.\n* **Interactive Maps:** Spatial job discovery.",
+        "screenshot": "",
+        "url": "https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc",
+        "type": "link"
+    },
+    {
         "id": 1781195976951,
         "title": "Ecology Vibe Coding",
         "author": "Karina Torres",
