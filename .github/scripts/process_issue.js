@@ -118,11 +118,19 @@ if (isResourceSubmission) {
         let localZipDest = '';
         
         for (const fileUrl of fileUrls) {
-            if (fileUrl.match(/\.(png|jpg|jpeg|gif)/i) || fileUrl.includes('/assets/')) {
+            const isImage = fileUrl.match(/\.(png|jpg|jpeg|gif|webp)/i) || 
+                            fileUrl.includes('/assets/') || 
+                            fileUrl.includes('/user-attachments/') || 
+                            fileUrl.includes('githubusercontent.com');
+            const isZip = fileUrl.match(/\.zip/i) || fileUrl.includes('/files/');
+
+            if (isImage && !isZip) {
+                const extMatch = fileUrl.match(/\.(png|jpg|jpeg|gif|webp)/i);
+                imgExt = extMatch ? extMatch[0].toLowerCase() : '.png';
                 const dest = path.join(projectDir, 'screenshot' + imgExt);
                 await downloadFile(fileUrl, dest);
                 screenshotPath = `projects/${party}/${slug}/screenshot${imgExt}`;
-            } else if (fileUrl.match(/\.zip/i) || fileUrl.includes('/files/')) {
+            } else if (isZip) {
                 localZipDest = path.join(projectDir, 'project.zip');
                 await downloadFile(fileUrl, localZipDest);
             }
