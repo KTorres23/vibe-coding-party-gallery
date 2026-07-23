@@ -8,7 +8,7 @@
         "description": "## Eco & Evo Jobs: A Curated Career Hub\n\nThe Eco & Evo Jobs portal is a streamlined, user-focused dashboard for researchers. With a sleek dark-mode aesthetic, it aggregates over 2,000 listings from specialized sources like EvolDir and Science Careers.\n\n**Core Features:**\n* **Precision Filtering:** Sort by date, institution, or deadline.\n* **Real-Time Data:** Updated daily for active opportunities.\n* **Interactive Maps:** Spatial job discovery.",
         "screenshot": "",
         "url": "https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc",
-        "type": "link"
+        "type": "hosted"
     },
     {
         "id": 1781195976951,
@@ -19,6 +19,6 @@
         "description": "A goofy little repo blending ecology and AI with pure vibe-coding energy.\n\n### 🌟 Core Features\n* **iNat Suite**: Web tools to query taxa, annotate traits, and use CLIP models to explore hidden secondary data.\n* **TAMU Job Board**: A serverless dashboard tracking ecology jobs, automated via GitHub Actions.\n* **Local Scripts**: Quick image cropping and custom GBIF mapping.",
         "screenshot": "",
         "url": "https://ktorres23.github.io/ecology-vibe-coding/",
-        "type": "link"
+        "type": "hosted"
     }
 ]

@@ -4,46 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery for Vibe Coding Parties</title>
-    <meta name="description" content="A gallery of vibe-coded projects from our monthly parties.">
+    <title>AI & Ecology Vibe Coding Hub</title>
+    <meta name="description"
+        content="A curated gallery of open-source AI and ecology vibe-coded tools, resources, and community projects. Co-hosted by Karina Torres, Kalindi Fonda, & Filippo Varini.">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts for modern typography -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Glassmorphic Header -->
     <header class="glass-header">
         <div class="header-logo-group">
-            <h1>Gallery for Vibe Coding Parties</h1>
-            <p>A gallery of vibe-coded projects created at vibe coding parties!</p>
+            <h1>🌿 AI & Ecology Vibe Coding Hub</h1>
+            <p class="header-subtitle">Bridging Ecology, AI, and Citizen Science through AI-Assisted Coding</p>
         </div>
-        <nav class="nav-tabs">
-            <button id="tabGallery" class="tab-btn active">Projects Gallery</button>
-            <button id="tabLearn" class="tab-btn">Learn More</button>
-        </nav>
-        <button id="submitBtn" class="btn-primary">Share Project</button>
+
+        <div class="header-actions">
+            <nav class="nav-tabs">
+                <button id="tabGallery" class="tab-btn active">Projects Gallery</button>
+                <button id="tabLearn" class="tab-btn">Learn More</button>
+                <button id="tabResources" class="tab-btn">Resources</button>
+            </nav>
+            <button id="themeToggleBtn" class="btn-theme-toggle" title="Toggle Light/Dark Mode">🌙 Night Mode</button>
+            <div class="header-submit-buttons">
+                <button id="submitBtn" class="btn-primary">Share Project</button>
+                <button id="submitResourceBtn" class="btn-secondary">Share Resource</button>
+            </div>
+        </div>
     </header>
 
     <main>
-        <!-- Gallery Section -->
+        <!-- ==================== 1. PROJECTS GALLERY TAB ==================== -->
         <section id="galleryView" class="tab-content">
-            <div class="filters" style="display: flex; gap: 1rem;">
-                <div>
-                    <label for="partyFilter">Filter by Party:</label>
-                    <select id="partyFilter">
-                        <option value="all">All Parties</option>
-                        <option value="ocean">Deep Ocean (Jan)</option>
-                        <option value="forest">Rainforest (Feb)</option>
+            <div class="controls-bar glass-panel-sm">
+                <div class="filter-group">
+                    <label for="sourceFilter">Source Type:</label>
+                    <select id="sourceFilter">
+                        <option value="all">All Sources</option>
+                        <option value="party">Monthly Party Projects</option>
+                        <option value="conference">Conference / Special Parties</option>
+                        <option value="other">Other Projects</option>
                     </select>
                 </div>
-                <div>
-                    <label for="typeFilter">Project Type:</label>
+
+                <div class="filter-group">
+                    <label for="partyFilter">Event / Party:</label>
+                    <select id="partyFilter">
+                        <option value="all">All Parties</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="typeFilter">Project Format:</label>
                     <select id="typeFilter">
-                        <option value="all">All Projects</option>
+                        <option value="all">All Formats</option>
                         <option value="hosted">Hosted Webpage</option>
                         <option value="download">Downloadable Source</option>
                         <option value="link">External Link</option>
                     </select>
+                </div>
+
+                <div class="search-group">
+                    <input type="text" id="searchInput" placeholder="Search projects by title, author, or keywords...">
                 </div>
             </div>
 
@@ -52,127 +75,244 @@
             </div>
         </section>
 
-        <!-- Learn More Section -->
+        <!-- ==================== 2. LEARN MORE TAB ==================== -->
         <section id="learnView" class="tab-content hidden">
             <div class="learn-hero glass-panel">
-                <h2>Vibe Coding Guidebook</h2>
-                <p>Welcome to the era of pure creation. Focus on the vision, design, and vibes; let AI handle the heavy
-                    lifting.</p>
+                <h2>Vibe Coding in Conservation & Ecology AI</h2>
+                <p>Welcome to the intersection of biology, participatory science, and computer science.
+                    Focus on your vision and the vibes — let AI handle the syntax.</p>
+
+                <div class="hosts-strip">
+                    <a href="https://ktorres23.github.io/" target="_blank" class="host-pill"
+                        style="text-decoration:none; color:inherit;">🦋 <strong>Karina Torres</strong> ↗</a>
+                    <a href="https://kalindifonda.com/" target="_blank" class="host-pill"
+                        style="text-decoration:none; color:inherit;">🐟 <strong>Kalindi Fonda</strong> ↗</a>
+                    <a href="https://www.fvarini.com/" target="_blank" class="host-pill"
+                        style="text-decoration:none; color:inherit;">🦈 <strong>Filippo Varini</strong> ↗</a>
+                </div>
             </div>
 
-            <div class="learn-grid">
-                <div class="learn-card glass-panel">
-                    <div class="card-icon">🌊</div>
-                    <h3>What is Vibe Coding?</h3>
-                    <p>Vibe coding is a development philosophy where the programmer steps into the role of a creative
-                        director. Using state-of-the-art AI code generators, you dictate layout ideas, desired
-                        mechanics, and design languages, guiding the model through iterative prompting rather than
-                        manual keyboard typing.</p>
+            <!-- Canva Graphic Slot -->
+            <div class="canva-figure-container glass-panel">
+                <div class="figure-header">
+                    <h3>🎨 Who Vibe Coding is For & What You Can Build</h3>
+                    <p>A guide to vibe coding applications across ecology, AI, and computer science</p>
+                </div>
+                <div class="graphic-frame" id="graphicFrame">
+                    <!-- Custom image container for Canva graphic assets/vibe-coding-figure.png -->
+                    <img id="vibeCodingGraphic" src="assets/vibe-coding-figure.png"
+                        alt="Who Vibe Coding is For Infographic"
+                        onerror="this.style.display='none'; document.getElementById('graphicFallback').style.display='flex';">
+                    <div id="graphicFallback" class="graphic-fallback">
+                        <div class="fallback-icon">📊</div>
+                        <h4>Vibe Coding Persona Matrix</h4>
+                        <p>Drop your Canva graphic export into <code>assets/vibe-coding-figure.png</code> to display it
+                            here!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHO, WHAT, WHY, HOW Grid -->
+            <div class="four-pillar-grid">
+                <!-- WHO -->
+                <div class="learn-card glass-panel pillar-who">
+                    <div class="pillar-badge">WHO</div>
+                    <h3>Who is Vibe Coding For?</h3>
+                    <ul class="pillar-list">
+                        <li><strong>🌿 Ecologists & Field Biologists:</strong> Turning messy R/Python scripts or data
+                            tables into interactive dashboards and maps without wrestling web syntax.</li>
+                        <li><strong>💻 Computer Scientists & AI Researchers:</strong> Rapidly prototyping UIs, testing
+                            algorithm benchmarks, and polishing pseudocode into deployable tools.</li>
+                        <li><strong>🌍 Citizen Scientists & Enthusiasts:</strong> Bringing creative conservation ideas
+                            and bioblitz tools to life with zero prior software background.</li>
+                    </ul>
                 </div>
 
-                <div class="learn-card glass-panel">
-                    <div class="card-icon">🚀</div>
-                    <h3>How to Get Started</h3>
-                    <p>To begin vibe coding, choose a modern AI assistant. Start by explaining your project goals in
-                        plain language, design rules, and visual style. Feed files directly to the model, run its
-                        suggestions in your browser, and prompt it to polish, fix bugs, or add details until you are
-                        completely satisfied.</p>
+                <!-- WHAT -->
+                <div class="learn-card glass-panel pillar-what">
+                    <div class="pillar-badge">WHAT</div>
+                    <h3>What Can You Build?</h3>
+                    <ul class="pillar-list">
+                        <li><strong> Spatial & Occurence Visualizers:</strong> Web interfaces querying iNaturalist &
+                            GBIF APIs to display species ranges.</li>
+                        <li><strong>🤖 ML Trait & Image Annotators:</strong> Tools using computer vision models (CLIP,
+                            YOLO) for
+                            automated camera trap or herbarium sorting.</li>
+                        <li><strong>📊 Environmental Dashboards:</strong> Interactive telemetry tools tracking wildlife
+                            movements and sensor data.</li>
+                    </ul>
                 </div>
 
-                <div class="learn-card glass-panel">
-                    <div class="card-icon">🎉</div>
-                    <h3>Vibe Coding Parties</h3>
-                    <p>Every month, we host themed hackathons where creators build biological, ecological, or aesthetic
-                        projects in just a few hours. No prior programming background is required! It's a space for
-                        scientists, artists, and creators to bring concepts to life in a collaborative, energetic
-                        environment.</p>
+                <!-- WHY -->
+                <div class="learn-card glass-panel pillar-why">
+                    <div class="pillar-badge">WHY</div>
+                    <h3>Why Vibe Code?</h3>
+                    <ul class="pillar-list">
+                        <li><strong>⚡ Accelerate Scientific Impact:</strong> Go from field idea to functional prototype
+                            in hours instead of months.</li>
+                        <li><strong>🤝 Bridge Domain Silos:</strong> Enable biologists and computer scientists to
+                            collaborate directly using plain English.</li>
+                        <li><strong>🌱 Open & Reproducible:</strong> Share working tools as open-source code for others
+                            to fork and build upon.</li>
+                    </ul>
                 </div>
 
-                <div class="learn-card glass-panel">
-                    <div class="card-icon">🙌</div>
+                <!-- HOW -->
+                <div class="learn-card glass-panel pillar-how">
+                    <div class="pillar-badge">HOW</div>
                     <h3>How to Get Involved</h3>
-                    <p>Ready to join? You can attend our monthly physical meetups, hop into our community channels, or
-                        build on your own using the themes listed in this gallery. Simply click the "Share Project"
-                        button at the top to contribute your vibe-coded masterpiece!</p>
+                    <ul class="pillar-list">
+                        <li><strong>🎉 Join Monthly Parties:</strong> Participate in our global virtual vibe coding
+                            sessions co-hosted by Karina, Kalindi, & Filippo.</li>
+                        <li><strong>📜 Use Dan Morris' Template:</strong> Explore the foundational <a
+                                href="https://lila.science/vibe-coding-parties" target="_blank"> Vibe Coding Party
+                                Template</a>.</li>
+                        <li><strong>🚀 Submit Your Projects:</strong> Share your tools or resource recommendations to be
+                            featured in this hub!</li>
+                    </ul>
                 </div>
+            </div>
+
+            <!-- Dan Morris Homage Highlight Banner -->
+            <div class="dan-morris-tribute glass-panel">
+                <div class="tribute-content">
+                    <span class="tribute-badge">Foundational Framework</span>
+                    <h3>Pioneering Ecology Vibe Coding</h3>
+                    <p>Our monthly parties build upon the foundational concept and repository template created by
+                        <strong>Dan Morris</strong>. Thank you, Dan!
+                    </p>
+                </div>
+                <a href="https://lila.science/vibe-coding-parties" target="_blank" class="btn-primary">Explore Dan
+                    Morris' Template ↗</a>
+            </div>
+        </section>
+
+        <!-- ==================== 3. RESOURCES TAB ==================== -->
+        <section id="resourcesView" class="tab-content hidden">
+            <div class="resources-header glass-panel">
+                <h2>🌿 Curated AI & Ecology Resources</h2>
+                <p>A community-curated directory of AI assistants, data APIs, IDEs, and starter templates to jumpstart
+                    your vibe coding journey.</p>
+
+                <div class="resource-filters">
+                    <button class="res-cat-pill active" data-category="all">All Resources</button>
+                    <button class="res-cat-pill" data-category="templates">Templates & Guides</button>
+                    <button class="res-cat-pill" data-category="agents">AI Assistants & Agents</button>
+                    <button class="res-cat-pill" data-category="ides">IDEs & Environments</button>
+                    <button class="res-cat-pill" data-category="eco_apis">Ecological Datasets & APIs</button>
+                    <button class="res-cat-pill" data-category="community">Community Tech</button>
+                </div>
+
+                <div class="search-group" style="margin-top: 1rem;">
+                    <input type="text" id="resourceSearchInput"
+                        placeholder="Search resources by keyword, API, or topic...">
+                </div>
+            </div>
+
+            <div class="resources-grid" id="resourcesContainer">
+                <!-- Resource cards generated dynamically -->
             </div>
         </section>
     </main>
 
-    <footer
-        style="text-align: center; padding: 2rem; margin-top: 2rem; color: rgba(50, 52, 55, 0.31); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1);">
-        <p>✨ <strong>Disclaimer:</strong> This entire website—including the design, logic, and automated GitHub
-            workflows—was built entirely through vibe coding!</p>
-        <p style="margin-top: 0.5rem;">Created by Karina Torres. <a href="https://ktorres23.github.io" target="_blank"
-                style="color: var(--accent-color); text-decoration: none;">Contact me</a></p>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>✨ <strong>Vibe Coded with AI:</strong> Built through iterative prompting for the global ecology &
+            conservation tech community.</p>
+        <p style="margin-top: 0.5rem;">Co-hosted by <a href="https://ktorres23.github.io/" target="_blank">Karina
+                Torres</a>, <a href="https://kalindifonda.com/" target="_blank">Kalindi Fonda</a>, & <a
+                href="https://www.fvarini.com/" target="_blank">Filippo Varini</a>.</p>
     </footer>
 
-    <!-- Submission Modal -->
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- Project Submission Modal -->
     <div id="submissionModal" class="modal hidden">
         <div class="modal-content glass-panel">
             <span class="close-btn">&times;</span>
-            <h2>Share Your Project</h2>
+            <h2>Share Your Vibe-Coded Project</h2>
+
+            <!-- LLM Prompt Helper Explanation Card -->
+            <div class="llm-prompt-helper-card">
+                <div class="helper-header">
+                    <span>🤖 Need Help Summarizing Your Project?</span>
+                    <button type="button" id="copyPromptBtn" class="btn-copy-prompt">Copy LLM Prompt 📋</button>
+                </div>
+                <p class="helper-text">Click <strong>"Copy LLM Prompt"</strong> to copy a pre-formatted prompt. Paste it
+                    into ChatGPT, Claude, or Gemini alongside your code files to automatically generate a concise
+                    description!</p>
+            </div>
+
             <form id="submissionForm">
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="projectName">Project Title</label>
-                        <input type="text" id="projectName" required placeholder="e.g. Coral Reef Simulator">
+                        <label for="projectName">Project Title *</label>
+                        <input type="text" id="projectName" required placeholder="e.g. iNat Coral Reef Trait Annotator">
                     </div>
                     <div class="form-group">
-                        <label for="authorName">Author / Credits</label>
+                        <label for="authorName">Author / Credits *</label>
                         <input type="text" id="authorName" required placeholder="Your name or handle">
                     </div>
                 </div>
 
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="authorLink">Author Website / Profile URL (Optional)</label>
+                        <label for="authorLink">Author Profile URL (Optional)</label>
                         <input type="url" id="authorLink" placeholder="https://github.com/yourusername">
                     </div>
                     <div class="form-group">
-                        <label for="partySelect">Vibe Coding Party</label>
-                        <select id="partySelect" required>
-                            <option value="ocean">Deep Ocean (Jan)</option>
-                            <option value="forest">Rainforest (Feb)</option>
+                        <label for="sourceTypeSelect">Source Classification *</label>
+                        <select id="sourceTypeSelect" required>
+                            <option value="party">Monthly Vibe Coding Party</option>
+                            <option value="conference">Conference / Special Party</option>
+                            <option value="other">Other Project (External)</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
+                    <label for="partySelect">Event / Category *</label>
+                    <select id="partySelect" required>
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="projectDesc">Project Description (Markdown supported)</label>
                     <textarea id="projectDesc" rows="4" maxlength="500"
-                        placeholder="Describe the vibe, core features, or libraries used. You can use **bold**, *italics*, `code blocks`, lists, and [links](url)."></textarea>
-                    <div class="desc-footer"
-                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; font-size: 0.85rem;">
-                        <span id="charCount" style="color: #64748b;">0 / 500 characters</span>
-                        <button type="button" id="copyPromptBtn" class="btn-secondary"
-                            style="font-size: 0.8rem; padding: 0.3rem 0.6rem; border-radius: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-color); color: var(--accent-color); cursor: pointer; transition: all 0.2s ease;">Copy
-                            LLM Prompt 🤖</button>
+                        placeholder="Describe your project, ecological features, or AI models used. Markdown supported."></textarea>
+                    <div class="desc-footer">
+                        <span id="charCount">0 / 500 characters</span>
                     </div>
                 </div>
 
-                <div class="submission-type-toggle">
-                    <label><input type="radio" name="subType" value="upload" checked> Upload Project Files</label>
-                    <label><input type="radio" name="subType" value="link"> External Link</label>
+                <div class="form-group">
+                    <label>Project Delivery Format *</label>
+                    <div class="submission-type-toggle">
+                        <label><input type="radio" name="subType" value="upload" checked> 📦 Upload (.zip)</label>
+                        <label><input type="radio" name="subType" value="hosted"> 🌐 Hosted Webpage URL</label>
+                        <label><input type="radio" name="subType" value="link"> 🔗 External Link / Repo</label>
+                    </div>
                 </div>
 
-                <!-- Project Upload Instructions -->
-                <div id="uploadSection" class="drag-drop-zone" style="border-style: dashed; border-color: var(--accent-color); background: rgba(59, 130, 246, 0.05);">
-                    <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">⚠️ Next Step Required</h4>
-                    <p>Since this is a static site, you cannot upload files directly here.</p>
-                    <p style="margin-top: 0.5rem;">When you click <strong>Submit Project</strong>, a GitHub Issue will open. <strong>Please drag and drop your project .zip file into the GitHub Issue body!</strong></p>
+                <!-- Upload Section Banner -->
+                <div id="uploadSection" class="drag-drop-zone">
+                    <h4>⚠️ Zip Upload Instruction</h4>
+                    <p>When you click <strong>Submit Project to GitHub</strong>, a pre-filled GitHub Issue will open.
+                        <strong>Drag & drop your project .zip file into the GitHub Issue body!</strong>
+                    </p>
                 </div>
 
+                <!-- URL Link Section -->
                 <div id="linkSection" class="form-group hidden">
-                    <label for="projectUrl">Project URL *</label>
-                    <input type="url" id="projectUrl" placeholder="https://...">
+                    <label for="projectUrl" id="urlLabel">Project URL *</label>
+                    <input type="url" id="projectUrl" placeholder="https://my-ecology-app.github.io">
                 </div>
 
-                <!-- Optional Screenshot Upload -->
                 <div class="form-group">
                     <label>Project Screenshot (Optional)</label>
                     <div id="screenshotZone" class="drag-drop-zone mini-zone">
-                        <p id="screenshotText">Click to upload or drag screenshot image here</p>
+                        <p id="screenshotText">Click or drag screenshot image here</p>
                         <input type="file" id="screenshotUpload" accept="image/*" class="hidden-input">
                     </div>
                     <div id="screenshotPreviewContainer" class="hidden">
@@ -181,10 +321,86 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary w-full">Submit Project</button>
+                <button type="submit" class="btn-primary w-full">Submit Project to GitHub</button>
             </form>
         </div>
     </div>
+
+    <!-- Resource Submission Modal -->
+    <div id="resourceModal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <span class="close-btn" id="closeResourceBtn">&times;</span>
+            <h2>Submit a Resource or Tool</h2>
+
+            <div class="llm-prompt-helper-card">
+                <div class="helper-header">
+                    <span>🤖 Need Help Curating Your Resource List?</span>
+                    <button type="button" id="copyResourcePromptBtn" class="btn-copy-prompt">Copy Resource LLM Prompt
+                        📋</button>
+                </div>
+                <p class="helper-text">Copy this prompt to ask your AI assistant to structure any API, IDE, or ecology
+                    dataset into a clean submission format!</p>
+            </div>
+
+            <form id="resourceForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="resourceTitle">Resource Title *</label>
+                        <input type="text" id="resourceTitle" required placeholder="e.g. Global Forest Watch API">
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceCategory">Category *</label>
+                        <select id="resourceCategory" required>
+                            <option value="templates">Templates & Guides</option>
+                            <option value="agents">AI Assistants & Agents</option>
+                            <option value="ides">IDEs & Environments</option>
+                            <option value="eco_apis">Ecological Datasets & APIs</option>
+                            <option value="community">Community Tech</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="resourceAuthor">Author / Provider *</label>
+                        <input type="text" id="resourceAuthor" required placeholder="e.g. World Resources Institute">
+                    </div>
+                    <div class="form-group">
+                        <label for="resourceLink">Resource URL *</label>
+                        <input type="url" id="resourceLink" required placeholder="https://...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="resourceDesc">Description</label>
+                    <textarea id="resourceDesc" rows="3" required
+                        placeholder="Briefly describe what this resource does and how it helps ecology vibe coders."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="resourceTags">Tags (comma-separated)</label>
+                    <input type="text" id="resourceTags" placeholder="e.g. Satellite, Forest Data, API">
+                </div>
+
+                <button type="submit" class="btn-primary w-full">Submit Resource</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Detail View Modal -->
+    <div id="detailModal" class="modal hidden">
+        <div class="modal-content glass-panel modal-lg">
+            <span class="close-btn" id="closeDetailBtn">&times;</span>
+            <div id="detailContainer">
+                <!-- Rendered dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastNotification" class="toast hidden">Prompt copied to clipboard! 📋</div>
+
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <script src="app.js"></script>
 </body>

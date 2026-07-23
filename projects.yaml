@@ -1,0 +1,39 @@
+- id: 1783444404701
+  title: "Eco & Evo Jobs"
+  author: "Caleb Charpentier"
+  authorLink: "https://calebcharpentier.com/"
+  sourceType: "other"
+  party: "other"
+  year: 2026
+  description: |
+    ## Eco & Evo Jobs: A Curated Career Hub
+
+    The Eco & Evo Jobs portal is a streamlined, user-focused dashboard for researchers. With a sleek dark-mode aesthetic, it aggregates over 2,000 listings from specialized sources like EvolDir and Science Careers.
+
+    **Core Features:**
+    * **Precision Filtering:** Sort by date, institution, or deadline.
+    * **Real-Time Data:** Updated daily for active opportunities.
+    * **Interactive Maps:** Spatial job discovery.
+  screenshot: ""
+  url: "https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc"
+  type: "hosted"
+  tags: ["Dashboard", "Careers", "Ecology", "Jobs"]
+
+- id: 1781195976951
+  title: "Ecology Vibe Coding"
+  author: "Karina Torres"
+  authorLink: "http://ktorres23.github.io"
+  sourceType: "other"
+  party: "other"
+  year: 2026
+  description: |
+    A goofy little repo blending ecology and AI with pure vibe-coding energy.
+
+    ### 🌟 Core Features
+    * **iNat Suite**: Web tools to query taxa, annotate traits, and use CLIP models to explore hidden secondary data.
+    * **TAMU Job Board**: A serverless dashboard tracking ecology jobs, automated via GitHub Actions.
+    * **Local Scripts**: Quick image cropping and custom GBIF mapping.
+  screenshot: ""
+  url: "https://ktorres23.github.io/ecology-vibe-coding/"
+  type: "hosted"
+  tags: ["iNaturalist", "GBIF", "AI", "Ecology"]

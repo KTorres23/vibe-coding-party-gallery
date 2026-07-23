@@ -1,4 +1,4 @@
-name: Process Project Submission
+name: Process Project or Resource Submission
 
 on:
   issues:
@@ -11,7 +11,7 @@ permissions:
 jobs:
   process-submission:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.issue.title, '[Submission]')
+    if: startsWith(github.event.issue.title, '[Submission]') || startsWith(github.event.issue.title, '[Resource]')
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -21,9 +21,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Parse Issue and Update Projects
+      - name: Install Dependencies
+        run: npm install js-yaml
+
+      - name: Parse Issue and Update Datasets
         run: node .github/scripts/process_issue.js
         env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
 
       - name: Debug Git Status
@@ -35,12 +39,11 @@ jobs:
           echo "Status after add:"
           git status
 
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Add new project from issue #${{ github.event.issue.number }}"
-          title: "New Project Submission: ${{ github.event.issue.title }}"
+          commit-message: "Process submission from issue #${{ github.event.issue.number }}"
+          title: "New Submission: ${{ github.event.issue.title }}"
           body: "Automated PR from issue #${{ github.event.issue.number }}."
           branch: "submission-${{ github.event.issue.number }}"

@@ -1,0 +1,80 @@
+- id: 1
+  category: "templates"
+  categoryName: "Starter Templates & Guides"
+  title: "Dan Morris' Vibe Coding Parties & Template"
+  author: "Dan Morris / LILA Science"
+  url: "https://lila.science/vibe-coding-parties"
+  description: "The foundational guide and starter repository template that pioneered vibe coding parties for AI and ecology. Used as the framework for our monthly virtual parties."
+  tags: ["Template", "Foundational", "LILA Science", "Guide"]
+
+- id: 2
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "Claude & Anthropic Artifacts"
+  author: "Anthropic"
+  url: "https://claude.ai"
+  description: "Excellent LLM interface with real-time web artifact rendering, ideal for vibe coding interactive HTML/JS ecology visualizers."
+  tags: ["LLM", "Artifacts", "Frontend"]
+
+- id: 3
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "ChatGPT (GPT-4o)"
+  author: "OpenAI"
+  url: "https://chatgpt.com"
+  description: "Multimodal AI assistant capable of writing code, analyzing ecology data tables, and processing images from field observations."
+  tags: ["LLM", "Multimodal", "Code Generation"]
+
+- id: 4
+  category: "ides"
+  categoryName: "IDEs & Coding Environments"
+  title: "Cursor IDE"
+  author: "Anysphere"
+  url: "https://cursor.com"
+  description: "AI-first code editor built on VS Code. Features inline codebase edits, multi-file code generation, and direct prompt execution."
+  tags: ["IDE", "AI-First", "VS Code"]
+
+- id: 5
+  category: "ides"
+  categoryName: "IDEs & Coding Environments"
+  title: "Positron IDE"
+  author: "Posit (RStudio team)"
+  url: "https://positron.posit.co"
+  description: "Next-generation data science IDE for R and Python, perfect for ecologists working with spatial data and statistical models."
+  tags: ["IDE", "R & Python", "Data Science"]
+
+- id: 6
+  category: "eco_apis"
+  categoryName: "Ecological Datasets & APIs"
+  title: "iNaturalist API & Open Data"
+  author: "iNaturalist"
+  url: "https://api.inaturalist.org/v1/docs/"
+  description: "RESTful API providing access to millions of community biodiversity observations, photo URLs, taxonomic trees, and identification histories."
+  tags: ["API", "Biodiversity", "Citizen Science"]
+
+- id: 7
+  category: "eco_apis"
+  categoryName: "Ecological Datasets & APIs"
+  title: "GBIF (Global Biodiversity Information Facility) API"
+  author: "GBIF"
+  url: "https://www.gbif.org/developer/summary"
+  description: "Global backbone network providing open access to hundreds of millions of species occurrence records, maps, and taxonomy."
+  tags: ["API", "Geospatial", "Species Occurrences"]
+
+- id: 8
+  category: "eco_apis"
+  categoryName: "Ecological Datasets & APIs"
+  title: "Movebank Animal Tracking Database"
+  author: "Max Planck Institute"
+  url: "https://www.movebank.org/"
+  description: "Free online infrastructure for animal movement data. Great for building movement visualizers and wildlife tracking tools."
+  tags: ["Telemetry", "Movement", "Wildlife"]
+
+- id: 9
+  category: "community"
+  categoryName: "Community & Conservation Tech"
+  title: "WILDLABS Conservation Tech Community"
+  author: "WILDLABS"
+  url: "https://wildlabs.net/"
+  description: "The global central hub for conservation technology, connecting field biologists, hardware engineers, and AI developers."
+  tags: ["Community", "Conservation Tech", "Network"]
