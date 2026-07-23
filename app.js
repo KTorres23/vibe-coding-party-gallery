@@ -31,14 +31,17 @@ const resCatPills = document.querySelectorAll('.res-cat-pill');
 // DOM Elements - Modals
 const submitBtn = document.getElementById('submitBtn');
 const submitResourceBtn = document.getElementById('submitResourceBtn');
+const mailingListBtn = document.getElementById('mailingListBtn');
 
 const submissionModal = document.getElementById('submissionModal');
 const resourceModal = document.getElementById('resourceModal');
 const detailModal = document.getElementById('detailModal');
+const mailingListModal = document.getElementById('mailingListModal');
 
 const closeBtn = document.querySelector('.close-btn');
 const closeResourceBtn = document.getElementById('closeResourceBtn');
 const closeDetailBtn = document.getElementById('closeDetailBtn');
+const closeMailingBtn = document.getElementById('closeMailingBtn');
 
 const submissionForm = document.getElementById('submissionForm');
 const resourceForm = document.getElementById('resourceForm');
@@ -329,15 +332,18 @@ searchInput.addEventListener('input', renderGallery);
 // ==================== MODALS & FORM SUBMISSIONS ====================
 submitBtn.addEventListener('click', () => submissionModal.classList.remove('hidden'));
 submitResourceBtn.addEventListener('click', () => resourceModal.classList.remove('hidden'));
+mailingListBtn.addEventListener('click', () => mailingListModal.classList.remove('hidden'));
 
 closeBtn.addEventListener('click', () => submissionModal.classList.add('hidden'));
 closeResourceBtn.addEventListener('click', () => resourceModal.classList.add('hidden'));
 closeDetailBtn.addEventListener('click', () => detailModal.classList.add('hidden'));
+closeMailingBtn.addEventListener('click', () => mailingListModal.classList.add('hidden'));
 
 window.addEventListener('click', (e) => {
     if (e.target === submissionModal) submissionModal.classList.add('hidden');
     if (e.target === resourceModal) resourceModal.classList.add('hidden');
     if (e.target === detailModal) detailModal.classList.add('hidden');
+    if (e.target === mailingListModal) mailingListModal.classList.add('hidden');
 });
 
 // Submission Type Toggle Logic (Upload .zip, Hosted Webpage URL, External Link)

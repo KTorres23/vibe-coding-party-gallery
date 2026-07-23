@@ -130,6 +130,24 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-mailing {
+    background: linear-gradient(135deg, #0a66c2, #0077b5);
+    color: white;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-mailing:hover {
+    background: linear-gradient(135deg, #004182, #0a66c2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+}
+
 .btn-theme-toggle {
     background: rgba(16, 185, 129, 0.1);
     border: 1px solid var(--primary-color);
