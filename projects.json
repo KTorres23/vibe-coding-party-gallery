@@ -1,5 +1,22 @@
 [
     {
+        "id": 1784829983969,
+        "title": "BioBlitz Go",
+        "author": "Jonathan Yardley",
+        "authorLink": "",
+        "sourceType": "party",
+        "party": "jul-2026",
+        "year": 2026,
+        "description": "**BioBlitz Go** is a browser-based, AI-assisted field tool that addresses the challenge of making nature recording engaging while keeping unverified machine learning suggestions clearly separated from structured, real-world biodiversity observations.\n\nKey Features:\n* **Adaptive Session Modes:** Supports **Compete** (timed group hunt), **Learn** (guess before AI reveal), and **Survey** (structured capture).\n* **Clear AI Boundaries:** Uses `Google Gemini` for field ID suggestions, clearly marking",
+        "screenshot": "projects/jul-2026/bioblitz-go/screenshot.png",
+        "url": "https://bioblitz-go-pilot.jonathanlyardley.chatgpt.site/",
+        "type": "hosted",
+        "tags": [
+            "Vibe Coded",
+            "Ecology"
+        ]
+    },
+    {
         "id": 1784826945490,
         "title": "Emoji Autocomplete Party",
         "author": "Kalindi Fonda",
