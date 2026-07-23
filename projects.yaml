@@ -1,3 +1,30 @@
+- id: 1784830985195
+  title: Free Whaley
+  author: Jonathan Yardley
+  authorLink: ''
+  sourceType: party
+  party: jul-2026
+  year: 2026
+  description: >-
+    **Free Whaley** transforms complex marine conservation data into an
+    interactive browser game, addressing public disconnect with commercial
+    whaling threats and ocean science.
+
+
+    * **Gamified Conservation:** Translates real-world IWC datasets and harpoon
+    threat mechanics into dynamic player interactions.
+
+    * **Vibe-Coded Web Interface:** Built using rapid natural language prompts
+    (`Up/W`, `Down/S`, `Right/D` control logic).
+
+    * **Impact-Driven Feedback:** Delivers real-time educational context upon
+    crit
+  screenshot: projects/jul-2026/free-whaley/screenshot.png
+  url: https://free-whaley-conservation.jonathanlyardley.chatgpt.site/
+  type: hosted
+  tags:
+    - Vibe Coded
+    - Ecology
 - id: 1784829983969
   title: BioBlitz Go
   author: Jonathan Yardley
