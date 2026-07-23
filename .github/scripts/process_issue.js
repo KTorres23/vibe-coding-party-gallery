@@ -83,7 +83,9 @@ if (isResourceSubmission) {
     const fileRegex = /(https:\/\/(?:github\.com|githubusercontent\.com)[^\s\)]+)/g;
     let match;
     while ((match = fileRegex.exec(issueBody)) !== null) {
-        fileUrls.push(match[1]);
+        // Strip trailing quotes, markdown brackets, or spaces
+        const cleanUrl = match[1].replace(/["'\)\>\]]+$/, '');
+        fileUrls.push(cleanUrl);
     }
 
     const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -137,20 +139,29 @@ if (isResourceSubmission) {
                 const extMatch = fileUrl.match(/\.(png|jpg|jpeg|gif|webp)/i);
                 imgExt = extMatch ? extMatch[0].toLowerCase() : '.png';
                 const dest = path.join(projectDir, 'screenshot' + imgExt);
-                await downloadFile(fileUrl, dest);
-
-                // Validation: Check if downloaded file is an HTML error page rather than a real image
-                const fileHeader = fs.readFileSync(dest, 'utf8', { flag: 'r' }).slice(0, 100);
-                if (fileHeader.includes('<!DOCTYPE') || fileHeader.includes('<html')) {
-                    console.warn("Downloaded URL returned HTML page instead of raw image data, removing invalid screenshot.");
-                    fs.unlinkSync(dest);
+                try {
+                    await downloadFile(fileUrl, dest);
+                    // Validation: Check if downloaded file is an HTML error page rather than a real image
+                    const fileHeader = fs.readFileSync(dest, 'utf8', { flag: 'r' }).slice(0, 100);
+                    if (fileHeader.includes('<!DOCTYPE') || fileHeader.includes('<html')) {
+                        console.warn("Downloaded URL returned HTML page instead of raw image data, removing invalid screenshot.");
+                        if (fs.existsSync(dest)) fs.unlinkSync(dest);
+                        screenshotPath = '';
+                    } else {
+                        screenshotPath = `projects/${party}/${slug}/screenshot${imgExt}`;
+                    }
+                } catch (downloadErr) {
+                    console.warn("Could not download screenshot:", downloadErr.message);
+                    if (fs.existsSync(dest)) fs.unlinkSync(dest);
                     screenshotPath = '';
-                } else {
-                    screenshotPath = `projects/${party}/${slug}/screenshot${imgExt}`;
                 }
             } else if (isZip) {
                 localZipDest = path.join(projectDir, 'project.zip');
-                await downloadFile(fileUrl, localZipDest);
+                try {
+                    await downloadFile(fileUrl, localZipDest);
+                } catch (downloadErr) {
+                    console.warn("Could not download zip file:", downloadErr.message);
+                }
             }
         }
 
