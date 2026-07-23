@@ -6,6 +6,12 @@ let currentResourceCategory = 'all';
 
 // DOM Elements - Theme
 const themeToggleBtn = document.getElementById('themeToggleBtn');
+const themeIcon = themeToggleBtn.querySelector('.theme-icon');
+const themeLabel = themeToggleBtn.querySelector('.theme-label');
+
+// DOM Elements - Mobile Menu
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const headerMenu = document.getElementById('headerMenu');
 
 // DOM Elements - Tabs
 const tabGallery = document.getElementById('tabGallery');
@@ -51,25 +57,51 @@ const copyResourcePromptBtn = document.getElementById('copyResourcePromptBtn');
 const toastNotification = document.getElementById('toastNotification');
 
 // ==================== THEME MANAGEMENT ====================
+function setThemeButtonLabel(isDark) {
+    themeIcon.textContent = isDark ? '☀️' : '🌙';
+    themeLabel.textContent = isDark ? ' Light Mode' : ' Night Mode';
+}
+
 function initTheme() {
     const savedTheme = localStorage.getItem('vibe_theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        themeToggleBtn.textContent = '☀️ Light Mode';
-    } else {
-        document.body.classList.remove('dark-mode');
-        themeToggleBtn.textContent = '🌙 Night Mode';
-    }
+    const isDark = savedTheme === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+    setThemeButtonLabel(isDark);
 }
 
 themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     localStorage.setItem('vibe_theme', isDark ? 'dark' : 'light');
-    themeToggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Night Mode';
+    setThemeButtonLabel(isDark);
 });
 
 initTheme();
+
+// ==================== MOBILE MENU ====================
+function closeHeaderMenu() {
+    headerMenu.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    hamburgerBtn.textContent = '☰';
+}
+
+hamburgerBtn.addEventListener('click', () => {
+    const isOpen = headerMenu.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    hamburgerBtn.textContent = isOpen ? '✕' : '☰';
+});
+
+headerMenu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        closeHeaderMenu();
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (!headerMenu.classList.contains('open')) return;
+    if (headerMenu.contains(e.target) || hamburgerBtn.contains(e.target)) return;
+    closeHeaderMenu();
+});
 
 // ==================== TAB SWITCHING ====================
 function switchTab(activeBtn, activeView) {

@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+
+[context.deploy-preview]
+  # Deploy previews are built for every pull request once this repo is
+  # connected to a Netlify site (Site settings > Build & deploy > Deploy contexts).
+
+[context.production]
