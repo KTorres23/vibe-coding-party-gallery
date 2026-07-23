@@ -1,53 +1,106 @@
-- id: 1784826945490
-  title: "Emoji Autocomplete Party"
-  author: "Kalindi Fonda"
-  authorLink: "https://github.com/KalindiFonda"
-  sourceType: "party"
-  party: "jun-2026"
+- id: 1784829983969
+  title: BioBlitz Go
+  author: Jonathan Yardley
+  authorLink: ''
+  sourceType: party
+  party: jul-2026
   year: 2026
-  description: |
-    Type : followed by text to get emoji suggestions (e.g. :fish -> 🐟). Works in text fields and rich editors. But it doesn't end there: confetti, sounds, swimming fish, growing flowers and more. Let's get the emoji party started!
-  screenshot: ""
-  url: "https://chromewebstore.google.com/detail/emoji-autocomplete-party/ohphclkcacfhpjkfijdnebmidhhmllma"
-  type: "link"
-  tags: ["Vibe Coded", "Ecology", "Fun"]
+  description: >-
+    **BioBlitz Go** is a browser-based, AI-assisted field tool that addresses
+    the challenge of making nature recording engaging while keeping unverified
+    machine learning suggestions clearly separated from structured, real-world
+    biodiversity observations.
 
-- id: 1783444404701
-  title: "Eco & Evo Jobs"
-  author: "Caleb Charpentier"
-  authorLink: "https://calebcharpentier.com/"
-  sourceType: "other"
-  party: "other"
+
+    Key Features:
+
+    * **Adaptive Session Modes:** Supports **Compete** (timed group hunt),
+    **Learn** (guess before AI reveal), and **Survey** (structured capture).
+
+    * **Clear AI Boundaries:** Uses `Google Gemini` for field ID suggestions,
+    clearly marking
+  screenshot: projects/jul-2026/bioblitz-go/screenshot.png
+  url: https://bioblitz-go-pilot.jonathanlyardley.chatgpt.site/
+  type: hosted
+  tags:
+    - Vibe Coded
+    - Ecology
+- id: 1784826945490
+  title: Emoji Autocomplete Party
+  author: Kalindi Fonda
+  authorLink: https://github.com/KalindiFonda
+  sourceType: party
+  party: jun-2026
   year: 2026
-  description: |
+  description: >
+    Type : followed by text to get emoji suggestions (e.g. :fish -> 🐟). Works
+    in text fields and rich editors. But it doesn't end there: confetti, sounds,
+    swimming fish, growing flowers and more. Let's get the emoji party started!
+  screenshot: ''
+  url: >-
+    https://chromewebstore.google.com/detail/emoji-autocomplete-party/ohphclkcacfhpjkfijdnebmidhhmllma
+  type: link
+  tags:
+    - Vibe Coded
+    - Ecology
+    - Fun
+- id: 1783444404701
+  title: Eco & Evo Jobs
+  author: Caleb Charpentier
+  authorLink: https://calebcharpentier.com/
+  sourceType: other
+  party: other
+  year: 2026
+  description: >
     ## Eco & Evo Jobs: A Curated Career Hub
 
-    The Eco & Evo Jobs portal is a streamlined, user-focused dashboard for researchers. With a sleek dark-mode aesthetic, it aggregates over 2,000 listings from specialized sources like EvolDir and Science Careers.
+
+    The Eco & Evo Jobs portal is a streamlined, user-focused dashboard for
+    researchers. With a sleek dark-mode aesthetic, it aggregates over 2,000
+    listings from specialized sources like EvolDir and Science Careers.
+
 
     **Core Features:**
-    * **Precision Filtering:** Sort by date, institution, or deadline.
-    * **Real-Time Data:** Updated daily for active opportunities.
-    * **Interactive Maps:** Spatial job discovery.
-  screenshot: ""
-  url: "https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc"
-  type: "hosted"
-  tags: ["Dashboard", "Careers", "Ecology", "Jobs"]
 
+    * **Precision Filtering:** Sort by date, institution, or deadline.
+
+    * **Real-Time Data:** Updated daily for active opportunities.
+
+    * **Interactive Maps:** Spatial job discovery.
+  screenshot: ''
+  url: >-
+    https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc
+  type: hosted
+  tags:
+    - Dashboard
+    - Careers
+    - Ecology
+    - Jobs
 - id: 1781195976951
-  title: "Ecology Vibe Coding"
-  author: "Karina Torres"
-  authorLink: "http://ktorres23.github.io"
-  sourceType: "other"
-  party: "other"
+  title: Ecology Vibe Coding
+  author: Karina Torres
+  authorLink: http://ktorres23.github.io
+  sourceType: other
+  party: other
   year: 2026
-  description: |
+  description: >
     A goofy little repo blending ecology and AI with pure vibe-coding energy.
 
+
     ### 🌟 Core Features
-    * **iNat Suite**: Web tools to query taxa, annotate traits, and use CLIP models to explore hidden secondary data.
-    * **TAMU Job Board**: A serverless dashboard tracking ecology jobs, automated via GitHub Actions.
+
+    * **iNat Suite**: Web tools to query taxa, annotate traits, and use CLIP
+    models to explore hidden secondary data.
+
+    * **TAMU Job Board**: A serverless dashboard tracking ecology jobs,
+    automated via GitHub Actions.
+
     * **Local Scripts**: Quick image cropping and custom GBIF mapping.
-  screenshot: ""
-  url: "https://ktorres23.github.io/ecology-vibe-coding/"
-  type: "hosted"
-  tags: ["iNaturalist", "GBIF", "AI", "Ecology"]
+  screenshot: ''
+  url: https://ktorres23.github.io/ecology-vibe-coding/
+  type: hosted
+  tags:
+    - iNaturalist
+    - GBIF
+    - AI
+    - Ecology
