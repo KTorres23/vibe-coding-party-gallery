@@ -192,7 +192,7 @@ function openDetailModal(project) {
     if (project.type === 'hosted') actionLink = 'Play Hosted Web Project →';
     else if (project.type === 'download') actionLink = 'Download Project Files ⬇️';
 
-    const screenshotHtml = project.screenshot ? `<img style="width:100%; max-height:300px; object-fit:cover; border-radius:16px; margin-bottom:1.5rem;" src="${project.screenshot}" alt="${project.title}">` : '';
+    const screenshotHtml = project.screenshot ? `<img style="width:100%; max-height:350px; object-fit:contain; background:rgba(0,0,0,0.03); border-radius:16px; margin-bottom:1.5rem;" src="${project.screenshot}" alt="${project.title}">` : '';
 
     detailContainer.innerHTML = `
         ${screenshotHtml}
