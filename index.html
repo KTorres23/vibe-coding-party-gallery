@@ -21,16 +21,21 @@
         </div>
 
         <div class="header-actions">
-            <nav class="nav-tabs">
-                <button id="tabGallery" class="tab-btn active">Projects Gallery</button>
-                <button id="tabLearn" class="tab-btn">Learn More</button>
-                <button id="tabResources" class="tab-btn">Resources</button>
-            </nav>
-            <button id="themeToggleBtn" class="btn-theme-toggle" title="Toggle Light/Dark Mode">🌙 Night Mode</button>
-            <div class="header-submit-buttons">
-                <button id="mailingListBtn" class="btn-mailing">📬 Join Mailing List</button>
-                <button id="submitBtn" class="btn-primary">Share Project</button>
-                <button id="submitResourceBtn" class="btn-secondary">Share Resource</button>
+            <button id="themeToggleBtn" class="btn-theme-toggle" title="Toggle Light/Dark Mode">
+                <span class="theme-icon">🌙</span><span class="theme-label"> Night Mode</span>
+            </button>
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="headerMenu">☰</button>
+            <div id="headerMenu" class="header-menu">
+                <nav class="nav-tabs">
+                    <button id="tabGallery" class="tab-btn active">Projects Gallery</button>
+                    <button id="tabLearn" class="tab-btn">Learn More</button>
+                    <button id="tabResources" class="tab-btn">Resources</button>
+                </nav>
+                <div class="header-submit-buttons">
+                    <button id="mailingListBtn" class="btn-mailing">📬 Join Mailing List</button>
+                    <button id="submitBtn" class="btn-primary">Share Project</button>
+                    <button id="submitResourceBtn" class="btn-secondary">Share Resource</button>
+                </div>
             </div>
         </div>
     </header>
