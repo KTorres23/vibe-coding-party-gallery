@@ -38,16 +38,22 @@ const resCatPills = document.querySelectorAll('.res-cat-pill');
 const submitBtn = document.getElementById('submitBtn');
 const submitResourceBtn = document.getElementById('submitResourceBtn');
 const mailingListBtn = document.getElementById('mailingListBtn');
+const contactBtn = document.getElementById('contactBtn');
+const organizeReachOutLink = document.getElementById('organizeReachOutLink');
+const howSubmitProjectLink = document.getElementById('howSubmitProjectLink');
+const howSubmitResourceLink = document.getElementById('howSubmitResourceLink');
 
 const submissionModal = document.getElementById('submissionModal');
 const resourceModal = document.getElementById('resourceModal');
 const detailModal = document.getElementById('detailModal');
 const mailingListModal = document.getElementById('mailingListModal');
+const contactModal = document.getElementById('contactModal');
 
 const closeBtn = document.querySelector('.close-btn');
 const closeResourceBtn = document.getElementById('closeResourceBtn');
 const closeDetailBtn = document.getElementById('closeDetailBtn');
 const closeMailingBtn = document.getElementById('closeMailingBtn');
+const closeContactBtn = document.getElementById('closeContactBtn');
 
 const submissionForm = document.getElementById('submissionForm');
 const resourceForm = document.getElementById('resourceForm');
@@ -365,17 +371,45 @@ searchInput.addEventListener('input', renderGallery);
 submitBtn.addEventListener('click', () => submissionModal.classList.remove('hidden'));
 submitResourceBtn.addEventListener('click', () => resourceModal.classList.remove('hidden'));
 mailingListBtn.addEventListener('click', () => mailingListModal.classList.remove('hidden'));
+if (contactBtn) contactBtn.addEventListener('click', () => contactModal.classList.remove('hidden'));
+const openContactFromMailingBtn = document.getElementById('openContactFromMailingBtn');
+if (openContactFromMailingBtn) {
+    openContactFromMailingBtn.addEventListener('click', () => {
+        mailingListModal.classList.add('hidden');
+        contactModal.classList.remove('hidden');
+    });
+}
+if (organizeReachOutLink) {
+    organizeReachOutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactModal.classList.remove('hidden');
+    });
+}
+if (howSubmitProjectLink) {
+    howSubmitProjectLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        submissionModal.classList.remove('hidden');
+    });
+}
+if (howSubmitResourceLink) {
+    howSubmitResourceLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        resourceModal.classList.remove('hidden');
+    });
+}
 
 closeBtn.addEventListener('click', () => submissionModal.classList.add('hidden'));
 closeResourceBtn.addEventListener('click', () => resourceModal.classList.add('hidden'));
 closeDetailBtn.addEventListener('click', () => detailModal.classList.add('hidden'));
 closeMailingBtn.addEventListener('click', () => mailingListModal.classList.add('hidden'));
+if (closeContactBtn) closeContactBtn.addEventListener('click', () => contactModal.classList.add('hidden'));
 
 window.addEventListener('click', (e) => {
     if (e.target === submissionModal) submissionModal.classList.add('hidden');
     if (e.target === resourceModal) resourceModal.classList.add('hidden');
     if (e.target === detailModal) detailModal.classList.add('hidden');
     if (e.target === mailingListModal) mailingListModal.classList.add('hidden');
+    if (e.target === contactModal) contactModal.classList.add('hidden');
 });
 
 // Submission Type Toggle Logic (Upload .zip, Hosted Webpage URL, External Link)

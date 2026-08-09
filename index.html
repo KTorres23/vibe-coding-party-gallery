@@ -24,7 +24,8 @@
             <button id="themeToggleBtn" class="btn-theme-toggle" title="Toggle Light/Dark Mode">
                 <span class="theme-icon">🌙</span><span class="theme-label"> Night Mode</span>
             </button>
-            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="headerMenu">☰</button>
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Open menu" aria-expanded="false"
+                aria-controls="headerMenu">☰</button>
             <div id="headerMenu" class="header-menu">
                 <nav class="nav-tabs">
                     <button id="tabGallery" class="tab-btn active">Projects Gallery</button>
@@ -34,7 +35,6 @@
                 <div class="header-submit-buttons">
                     <button id="mailingListBtn" class="btn-mailing">📬 Join Mailing List</button>
                     <button id="submitBtn" class="btn-primary">Share Project</button>
-                    <button id="submitResourceBtn" class="btn-secondary">Share Resource</button>
                 </div>
             </div>
         </div>
@@ -86,18 +86,23 @@
             <div class="learn-hero glass-panel">
                 <div class="hero-text-col">
                     <h2>Vibe Coding in Conservation & Ecology AI</h2>
-                    <p>Welcome to the intersection of biology, participatory science, and computer science. Focus on your vision and the vibes — let AI handle the syntax.</p>
-                    
+                    <p>Welcome to the intersection of biology, participatory science, and computer science. Focus on
+                        your vision and the vibes — let AI handle the syntax.</p>
+
                     <div class="hosts-strip">
-                        <a href="https://ktorres23.github.io/" target="_blank" class="host-pill" style="text-decoration:none; color:inherit;">🦋 <strong>Karina Torres</strong> ↗</a>
-                        <a href="https://kalindifonda.com/" target="_blank" class="host-pill" style="text-decoration:none; color:inherit;">🐟 <strong>Kalindi Fonda</strong> ↗</a>
-                        <a href="https://www.fvarini.com/" target="_blank" class="host-pill" style="text-decoration:none; color:inherit;">🦈 <strong>Filippo Varini</strong> ↗</a>
+                        <a href="https://ktorres23.github.io/" target="_blank" class="host-pill"
+                            style="text-decoration:none; color:inherit;">🦋 <strong>Karina Torres</strong> ↗</a>
+                        <a href="https://kalindifonda.com/" target="_blank" class="host-pill"
+                            style="text-decoration:none; color:inherit;">🐟 <strong>Kalindi Fonda</strong> ↗</a>
+                        <a href="https://www.fvarini.com/" target="_blank" class="host-pill"
+                            style="text-decoration:none; color:inherit;">🦈 <strong>Filippo Varini</strong> ↗</a>
                     </div>
                 </div>
 
                 <div class="hero-graphic-col">
                     <div class="graphic-frame" id="graphicFrame">
-                        <img id="vibeCodingGraphic" src="assets/vibe-coding-figure.png" alt="Who Vibe Coding is For Infographic">
+                        <img id="vibeCodingGraphic" src="assets/vibe-coding-figure.png"
+                            alt="Who Vibe Coding is For Infographic">
                     </div>
                 </div>
             </div>
@@ -123,7 +128,9 @@
                     <div class="pillar-badge">WHAT</div>
                     <h3>What Can You Build?</h3>
                     <ul class="pillar-list">
-                        <li><strong> Spatial & Occurence Visualizers:</strong> Web interfaces querying iNaturalist &
+                        <li><strong>🎮 Games & Portfolio Websites:</strong> Interactive games, portfolio websites, and
+                            other creative projects</li>
+                        <li><strong>🗺️ Spatial & Occurrence Visualizers:</strong> Web interfaces querying iNaturalist &
                             GBIF APIs to display species ranges.</li>
                         <li><strong>🤖 ML Trait & Image Annotators:</strong> Tools using computer vision models (CLIP,
                             YOLO) for
@@ -157,8 +164,10 @@
                         <li><strong>📜 Use Dan Morris' Template:</strong> Explore the foundational <a
                                 href="https://lila.science/vibe-coding-parties" target="_blank"> Vibe Coding Party
                                 Template</a>.</li>
-                        <li><strong>🚀 Submit Your Projects:</strong> Share your tools or resource recommendations to be
-                            featured in this hub!</li>
+                        <li><strong>⛺ Want to Organize Your Own?</strong> Follow Dan Morris' template or <a href="#"
+                                id="organizeReachOutLink" style="color: var(--accent-color); font-weight: 600;">reach
+                                out to us</a> for help hosting your own event!</li>
+                        <li><strong>🚀 Submit Your Work:</strong> <a href="#" id="howSubmitProjectLink" style="color: var(--accent-color); font-weight: 600;">Share a project</a> or <a href="#" id="howSubmitResourceLink" style="color: var(--accent-color); font-weight: 600;">share a resource</a> recommendation to be featured in this hub!</li>
                     </ul>
                 </div>
             </div>
@@ -180,9 +189,16 @@
         <!-- ==================== 3. RESOURCES TAB ==================== -->
         <section id="resourcesView" class="tab-content hidden">
             <div class="resources-header glass-panel">
-                <h2>🌿 Curated AI & Ecology Resources</h2>
-                <p>A community-curated directory of AI assistants, data APIs, IDEs, and starter templates to jumpstart
-                    your vibe coding journey.</p>
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <div>
+                        <h2>🌿 Curated AI & Ecology Resources</h2>
+                        <p style="margin-top: 0.25rem; color: var(--text-muted);">A community-curated directory of AI
+                            assistants, data APIs, IDEs, and starter templates to jumpstart your vibe coding journey.
+                        </p>
+                    </div>
+                    <button id="submitResourceBtn" class="btn-secondary">Share Resource</button>
+                </div>
 
                 <div class="resource-filters">
                     <button class="res-cat-pill active" data-category="all">All Resources</button>
@@ -301,9 +317,14 @@
 
                 <!-- Screenshot Attachment Instruction -->
                 <div class="form-group">
-                    <div class="drag-drop-zone mini-zone" style="background: rgba(59, 130, 246, 0.05); border-color: var(--accent-color);">
-                        <h4 style="color: var(--accent-color); margin-bottom: 0.35rem;">📸 Screenshot Attachment (Optional)</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Attaching a screenshot is <strong>optional</strong>. If you have one, you can <strong>drag and drop your screenshot image (.png or .jpg) into the GitHub Issue body</strong> when it opens!</p>
+                    <div class="drag-drop-zone mini-zone"
+                        style="background: rgba(59, 130, 246, 0.05); border-color: var(--accent-color);">
+                        <h4 style="color: var(--accent-color); margin-bottom: 0.35rem;">📸 Screenshot Attachment
+                            (Optional)</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Attaching a screenshot is
+                            <strong>optional</strong>. If you have one, you can <strong>drag and drop your screenshot
+                                image (.png or .jpg) into the GitHub Issue body</strong> when it opens!
+                        </p>
                     </div>
                 </div>
 
@@ -378,9 +399,91 @@
         <div class="modal-content glass-panel" style="text-align: center; max-width: 500px;">
             <span class="close-btn" id="closeMailingBtn">&times;</span>
             <div style="font-size: 3rem; margin-bottom: 0.5rem;">📬</div>
-            <h2 style="color: var(--primary-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Join Our Vibe Coding Mailing List</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Stay updated on our monthly global virtual vibe coding parties, community announcements, and new ecology AI tools. Connect with Karina Torres on LinkedIn to get added to our mailing list!</p>
-            <a href="https://www.linkedin.com/in/karina-torres-828175299/" target="_blank" class="btn-primary" style="width: 100%; padding: 0.75rem 1.25rem; font-size: 1rem; text-decoration: none;">Connect on LinkedIn ↗</a>
+            <h2 style="color: var(--primary-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Join Our Vibe Coding
+                Mailing List</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.25rem;">Stay
+                updated on our monthly global virtual vibe coding parties, community announcements, and new ecology AI
+                tools. Sign up via our Google Form to get added to our mailing list!</p>
+            <a href="https://forms.gle/qChfutUWUn8k8u5X8" target="_blank" class="btn-primary"
+                style="width: 100%; padding: 0.75rem 1.25rem; font-size: 1rem; text-decoration: none; margin-bottom: 1rem;">Join
+                via Google Form ↗</a>
+
+            <div
+                style="border-top: 1px solid var(--border-color); padding-top: 0.85rem; margin-top: 0.5rem; text-align: center;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Want to reach out or
+                    organize your own party?</p>
+                <button type="button" id="openContactFromMailingBtn" class="btn-secondary"
+                    style="padding: 0.4rem 0.85rem; font-size: 0.85rem;">💬 Reach Out to Co-Hosts</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact / Reach Out Modal -->
+    <div id="contactModal" class="modal hidden">
+        <div class="modal-content glass-panel" style="text-align: center; max-width: 550px;">
+            <span class="close-btn" id="closeContactBtn">&times;</span>
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">💬</div>
+            <h2 style="color: var(--primary-color); font-size: 1.6rem; margin-bottom: 0.5rem;">Get in Touch & Reach Out
+            </h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Have
+                questions, want to organize your own vibe coding party, or collaborate on ecology AI tools? We'd love to
+                connect!</p>
+
+            <div class="contact-hosts-list"
+                style="display: flex; flex-direction: column; gap: 0.85rem; text-align: left; margin-bottom: 1.5rem;">
+                <div class="contact-card glass-panel-sm"
+                    style="padding: 0.85rem 1rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">
+                    <div>
+                        <strong style="font-size: 1.05rem;">🦋 Karina Torres</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Co-Host • AI & Ecology</p>
+                    </div>
+                    <div style="display: flex; gap: 0.4rem;">
+                        <a href="https://www.linkedin.com/in/karina-torres-828175299/" target="_blank"
+                            class="btn-secondary"
+                            style="padding: 0.35rem 0.75rem; font-size: 0.85rem; text-decoration: none;">LinkedIn ↗</a>
+                        <a href="https://ktorres23.github.io/" target="_blank" class="btn-secondary"
+                            style="padding: 0.35rem 0.75rem; font-size: 0.85rem; text-decoration: none;">Website ↗</a>
+                    </div>
+                </div>
+
+                <div class="contact-card glass-panel-sm"
+                    style="padding: 0.85rem 1rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">
+                    <div>
+                        <strong style="font-size: 1.05rem;">🐟 Kalindi Fonda</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Co-Host • Marine Science & Tech</p>
+                    </div>
+                    <div style="display: flex; gap: 0.4rem;">
+                        <a href="https://www.linkedin.com/in/kalindifonda/" target="_blank" class="btn-secondary"
+                            style="padding: 0.35rem 0.75rem; font-size: 0.85rem; text-decoration: none;">LinkedIn ↗</a>
+                        <a href="https://kalindifonda.com/" target="_blank" class="btn-secondary"
+                            style="padding: 0.35rem 0.75rem; font-size: 0.85rem; text-decoration: none;">Website ↗</a>
+                    </div>
+                </div>
+
+                <div class="contact-card glass-panel-sm"
+                    style="padding: 0.85rem 1rem; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">
+                    <div>
+                        <strong style="font-size: 1.05rem;">🦈 Filippo Varini</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Co-Host • Conservation AI</p>
+                    </div>
+                    <div style="display: flex; gap: 0.4rem;">
+                        <a href="https://www.linkedin.com/in/filippo-varini/" target="_blank" class="btn-secondary"
+                            style="padding: 0.35rem 0.75rem; font-size: 0.85rem; text-decoration: none;">LinkedIn ↗</a>
+                        <a href="https://www.fvarini.com/" target="_blank" class="btn-secondary"
+                            style="padding: 0.35rem 0.75rem; font-size: 0.85rem; text-decoration: none;">Website ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="background: rgba(16, 185, 129, 0.08); border-radius: 12px; padding: 1rem; border: 1px solid var(--primary-color);">
+                <p style="font-size: 0.95rem; margin-bottom: 0.35rem;"><strong>⛺ Want to organize your own
+                        party?</strong></p>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Follow <a
+                        href="https://lila.science/vibe-coding-parties" target="_blank"
+                        style="color: var(--accent-color); font-weight:600;">Dan Morris' Vibe Coding Template ↗</a> or
+                    reach out directly to our co-hosts above for support!</p>
+            </div>
         </div>
     </div>
 
