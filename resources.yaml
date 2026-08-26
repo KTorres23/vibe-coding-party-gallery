@@ -14,16 +14,16 @@
   author: "Anthropic"
   url: "https://claude.ai"
   description: "Excellent LLM interface with real-time web artifact rendering, ideal for vibe coding interactive HTML/JS ecology visualizers."
-  tags: ["LLM", "Artifacts", "Frontend"]
+  tags: ["LLM", "Artifacts", "Frontend", "Claude"]
 
 - id: 3
   category: "agents"
   categoryName: "AI Assistants & Agents"
-  title: "ChatGPT (GPT-4o)"
+  title: "ChatGPT (GPT-4o & Sites)"
   author: "OpenAI"
   url: "https://chatgpt.com"
-  description: "Multimodal AI assistant capable of writing code, analyzing ecology data tables, and processing images from field observations."
-  tags: ["LLM", "Multimodal", "Code Generation"]
+  description: "Multimodal AI assistant capable of writing code, analyzing ecology data tables, and creating hosted web pages directly."
+  tags: ["LLM", "Multimodal", "Code Generation", "ChatGPT"]
 
 - id: 4
   category: "ides"
@@ -78,3 +78,129 @@
   url: "https://wildlabs.net/"
   description: "The global central hub for conservation technology, connecting field biologists, hardware engineers, and AI developers."
   tags: ["Community", "Conservation Tech", "Network"]
+
+- id: 10
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "Ollama Desktop (Local Models)"
+  author: "Ollama Team"
+  url: "https://ollama.com"
+  description: "Run open-source LLMs (Llama 3.2, Qwen 2.5, DeepSeek R1) locally on your Mac/Windows laptop 100% offline with zero data leaving your machine."
+  tags: ["Local AI", "Offline", "Privacy", "LLM"]
+
+- id: 11
+  category: "ides"
+  categoryName: "IDEs & Coding Environments"
+  title: "chattr for RStudio"
+  author: "mlverse / Posit"
+  url: "https://mlverse.github.io/chattr/"
+  description: "Seamless RStudio package that adds an interactive AI chat pane connected to local Ollama models or cloud APIs directly inside RStudio."
+  tags: ["RStudio", "R Package", "Local AI", "Data Science"]
+
+- id: 12
+  category: "ides"
+  categoryName: "IDEs & Coding Environments"
+  title: "ellmer R Package"
+  author: "Tidyverse / Posit"
+  url: "https://ellmer.tidyverse.org/"
+  description: "Official R package by the Tidyverse team for executing structured prompts and calling LLM APIs (Anthropic, OpenAI, Gemini) directly from R scripts."
+  tags: ["RStudio", "R Package", "API", "Tidyverse"]
+
+- id: 13
+  category: "ides"
+  categoryName: "IDEs & Coding Environments"
+  title: "Continue.dev Extension"
+  author: "Continue Dev"
+  url: "https://continue.dev"
+  description: "Leading open-source AI code assistant for VS Code and JetBrains, connecting your editor to local Ollama or cloud models."
+  tags: ["VS Code", "Open Source", "Extension", "IDE"]
+
+- id: 14
+  category: "templates"
+  categoryName: "Starter Templates & Guides"
+  title: "Compound Engineering Plugin"
+  author: "Every Inc"
+  url: "https://github.com/everyinc/compound-engineering-plugin"
+  description: "Framework and plugin to help with agent structuring, brain dumping, and managing complex vibe coding projects."
+  tags: ["Agents", "Structuring", "Brain Dump", "Plugin"]
+
+- id: 15
+  category: "templates"
+  categoryName: "Starter Templates & Guides"
+  title: "Freeflow (Wispr Flow Alternative)"
+  author: "Zach Latta"
+  url: "https://github.com/zachlatta/freeflow"
+  description: "Open-source voice-to-text dictation tool for rapid voice brain-dumping and prompt drafting without manual typing."
+  tags: ["Voice AI", "Brain Dump", "Open Source", "Productivity"]
+
+- id: 16
+  category: "templates"
+  categoryName: "Starter Templates & Guides"
+  title: "AI Hero Images Guide"
+  author: "Dan Morris (agentmorris)"
+  url: "https://github.com/agentmorris/hero-images"
+  description: "Examples, prompt engineering strategies, and workflows for generating striking AI hero images for web apps and projects."
+  tags: ["Prompting", "Design", "Hero Images", "Guide"]
+
+- id: 17
+  category: "templates"
+  categoryName: "Starter Templates & Guides"
+  title: "Creating ChatGPT Sites"
+  author: "OpenAI"
+  url: "https://help.openai.com/en/articles/20001339-creating-and-managing-chatgpt-sites"
+  description: "Official guide on building and deploying instant hosted web applications directly using ChatGPT prompt instructions."
+  tags: ["ChatGPT", "Web Apps", "No-Code", "Guide"]
+
+- id: 18
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "Caveman Prompt Simplifier 🗿"
+  author: "Caveman Team"
+  url: "https://caveman.so/"
+  description: "Simplify your prompts to slash token consumption, save API credits, and reduce the environmental & energy footprint of LLM queries!"
+  tags: ["Prompting", "Eco-Friendly", "Token Savings", "Utility"]
+
+- id: 19
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "Firstmate"
+  author: "Kun Chen"
+  url: "https://github.com/kunchenguid/firstmate"
+  description: "An AI pair programmer assistant designed to streamline vibe coding workflows and repository exploration."
+  tags: ["Pair Programming", "AI Assistant", "Dev Tool"]
+
+- id: 20
+  category: "templates"
+  categoryName: "Starter Templates & Guides"
+  title: "Claude Superpowers"
+  author: "Obra"
+  url: "https://github.com/obra/superpowers"
+  description: "A rich collection of system prompts, capabilities, and workflows that unlock advanced agentic coding skills in Claude."
+  tags: ["Claude", "System Prompts", "Agentic Coding"]
+
+- id: 21
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "GitHub Copilot Student Developer Pack"
+  author: "GitHub"
+  url: "https://education.github.com/pack"
+  description: "100% free access to GitHub Copilot for verified students, academic researchers, and educators with .edu email addresses."
+  tags: ["Student Pack", ".edu", "Free Cloud", "Copilot"]
+
+- id: 22
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "Google Gemini"
+  author: "Google"
+  url: "https://gemini.google.com"
+  description: "Multimodal AI assistant with massive context windows, ideal for analyzing long scientific papers, codebase repos, and ecological dataset tables."
+  tags: ["Gemini", "Multimodal", "Large Context", "LLM"]
+
+- id: 23
+  category: "agents"
+  categoryName: "AI Assistants & Agents"
+  title: "DeepSeek AI"
+  author: "DeepSeek"
+  url: "https://www.deepseek.com"
+  description: "Open-weights reasoning (R1) and code generation models offering state-of-the-art performance for local and API-based vibe coding."
+  tags: ["Reasoning", "Open Weights", "Coding LLM"]

@@ -122,6 +122,21 @@ tabGallery.addEventListener('click', () => switchTab(tabGallery, galleryView));
 tabLearn.addEventListener('click', () => switchTab(tabLearn, learnView));
 tabResources.addEventListener('click', () => switchTab(tabResources, resourcesView));
 
+// Handle URL Hash Navigation (e.g. index.html#learn)
+function handleHashNavigation() {
+    const hash = window.location.hash.toLowerCase();
+    if (hash === '#learn') {
+        switchTab(tabLearn, learnView);
+    } else if (hash === '#resources') {
+        switchTab(tabResources, resourcesView);
+    } else if (hash === '#gallery') {
+        switchTab(tabGallery, galleryView);
+    }
+}
+
+window.addEventListener('hashchange', handleHashNavigation);
+window.addEventListener('DOMContentLoaded', handleHashNavigation);
+
 // ==================== MARKDOWN PARSER ====================
 function parseMarkdown(text) {
     if (!text) return 'No description provided.';

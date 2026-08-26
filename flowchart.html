@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Start | AI & Ecology Vibe Coding Flowchart</title>
+    <meta name="description"
+        content="Interactive decision guide for ecologists, field researchers, developers, and students to find the best AI tools, IDEs, and local/cloud vibe coding setup.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Glassmorphic Header -->
+    <header class="glass-header">
+        <div class="header-logo-group">
+            <h1>🌿 AI & Ecology Vibe Coding Hub</h1>
+            <p class="header-subtitle">Interactive Setup Navigator: Find Your Vibe Coding Pathway</p>
+        </div>
+
+        <div class="header-actions">
+            <button id="themeToggleBtn" class="btn-theme-toggle" title="Toggle Light/Dark Mode">
+                <span class="theme-icon">🌙</span><span class="theme-label"> Night Mode</span>
+            </button>
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Open menu" aria-expanded="false"
+                aria-controls="headerMenu">☰</button>
+            <div id="headerMenu" class="header-menu">
+                <nav class="nav-tabs">
+                    <a href="index.html" class="tab-btn">Projects Gallery</a>
+                    <a href="index.html#learn" class="tab-btn">Learn More</a>
+                    <a href="index.html#resources" class="tab-btn">Resources</a>
+                </nav>
+                <div class="header-submit-buttons">
+                    <a href="index.html" class="btn-secondary">← Back to Hub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flowchart-main">
+        <!-- Hero Section -->
+        <section class="flowchart-hero glass-panel">
+            <div class="hero-content">
+                <div class="hero-badge-tag">🧭 Decision Tree & Navigator</div>
+                <h2>Find Your Ideal Vibe Coding Setup</h2>
+                <p>People come to vibe coding parties with diverse backgrounds — from field ecologists using RStudio, to students with free .edu perks, to developers building web dashboards. Answer a couple of quick questions to find your personalized AI tool stack!</p>
+            </div>
+
+            <!-- View Toggle Switcher -->
+            <div class="view-mode-switcher">
+                <button id="btnWizardMode" class="mode-btn active">
+                    <span>🧙‍♂️</span> Interactive Wizard
+                </button>
+                <button id="btnVisualMode" class="mode-btn">
+                    <span>🗺️</span> Full Flowchart Map
+                </button>
+            </div>
+        </section>
+
+        <!-- ==================== 1. WIZARD MODE CONTAINER ==================== -->
+        <section id="wizardView" class="flowchart-section">
+            <div class="wizard-card glass-panel">
+                <!-- Progress Indicator -->
+                <div class="wizard-header">
+                    <div class="wizard-nav-controls">
+                        <button id="btnWizardBack" class="btn-icon-text hidden">← Back</button>
+                        <button id="btnWizardReset" class="btn-icon-text hidden">🔄 Start Over</button>
+                    </div>
+                    <div id="wizardStepTracker" class="wizard-step-tracker">Step 1 of 2</div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar-fill" style="width: 50%;"></div>
+                </div>
+
+                <!-- Dynamic Question Body -->
+                <div id="wizardQuestionContainer" class="wizard-question-container">
+                    <!-- Populated dynamically via flowchart.js -->
+                </div>
+
+                <!-- Dynamic Result Card Body -->
+                <div id="wizardResultContainer" class="wizard-result-container hidden">
+                    <!-- Populated dynamically via flowchart.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. VISUAL FLOWCHART MAP CONTAINER ==================== -->
+        <section id="visualView" class="flowchart-section hidden">
+            <div class="visual-map-card glass-panel">
+                <div class="visual-map-header">
+                    <h3>Interactive Ecology AI Decision Tree</h3>
+                    <p>Click on any node to view detailed tool specs, setup guides, and starter prompt templates.</p>
+                </div>
+
+                <!-- Flowchart Node Grid -->
+                <div class="tree-container">
+                    <!-- Category Columns -->
+                    <div class="tree-grid" id="treeGrid">
+                        <!-- Rendered by flowchart.js -->
+                    </div>
+                </div>
+
+                <!-- Selected Node Details Drawer -->
+                <div id="nodeDetailDrawer" class="node-detail-drawer glass-panel-sm hidden">
+                    <button id="closeDrawerBtn" class="close-drawer-btn">✕</button>
+                    <div id="nodeDetailContent"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <p>🌿 AI & Ecology Vibe Coding Hub | Co-hosted by Karina Torres, Kalindi Fonda, & Filippo Varini</p>
+        <p class="footer-sub">Build open tools for conservation, ecology, and citizen science with AI assistance.</p>
+    </footer>
+
+    <script src="flowchart.js"></script>
+</body>
+
+</html>
