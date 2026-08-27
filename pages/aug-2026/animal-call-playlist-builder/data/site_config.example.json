@@ -1,0 +1,12 @@
+{
+  "site_name": "Your site name",
+  "lat": -27.4698,
+  "lng": 153.0251,
+  "radius_km": 10,
+  "taxonomic_classes": ["Aves", "Mammalia", "Amphibia", "Insecta", "Reptilia"],
+  "ebird_region_code": "AU-QLD",
+  "ebird_back_days": 30,
+  "ebird_api_key": "YOUR_EBIRD_KEY",
+  "xenocanto_api_key": "YOUR_XENOCANTO_KEY",
+  "allow_nc_licenses": false
+}

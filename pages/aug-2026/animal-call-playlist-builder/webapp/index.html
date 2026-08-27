@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Animal Call Playlist</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --card-bg: #ffffff;
+    --text: #1f2320;
+    --muted: #6b7268;
+    --accent: #3b6e4f;
+    --border: #e0ddd3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141815;
+      --card-bg: #1d2320;
+      --text: #eceee9;
+      --muted: #9aa39a;
+      --accent: #7fbf9a;
+      --border: #2c332e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 2rem 1rem 4rem;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .sub { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+  input[type="search"] {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .actions { margin-bottom: 1.25rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  button:hover { border-color: var(--accent); }
+  .species {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .species-name { font-weight: 600; }
+  .species-sci { color: var(--muted); font-style: italic; font-size: 0.9rem; }
+  .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.2rem; }
+  .tag {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  audio { width: 100%; margin-top: 0.3rem; }
+  .attribution { font-size: 0.75rem; color: var(--muted); }
+  .attribution a { color: var(--accent); }
+  .empty { color: var(--muted); padding: 2rem 0; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Site Animal Call Playlist</h1>
+  <p class="sub" id="subtitle">Loading species list…</p>
+
+  <input type="search" id="search" placeholder="Filter by common or scientific name…">
+  <div class="actions">
+    <button id="downloadM3U">Download playlist (.m3u)</button>
+    <button id="downloadJSON">Download data (.json)</button>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<script>
+let allSpecies = [];
+
+fetch('data.json')
+  .then(r => r.json())
+  .then(data => {
+    allSpecies = data;
+    document.getElementById('subtitle').textContent =
+      `${data.length} species with license-cleared call recordings`;
+    render(data);
+  })
+  .catch(err => {
+    document.getElementById('subtitle').textContent =
+      'Could not load data.json yet — run the pipeline scripts to generate it.';
+  });
+
+function render(list) {
+  const container = document.getElementById('list');
+  container.innerHTML = '';
+  if (list.length === 0) {
+    container.innerHTML = '<div class="empty">No matches.</div>';
+    return;
+  }
+  for (const s of list) {
+    const el = document.createElement('div');
+    el.className = 'species';
+    const tags = [];
+    if (s.taxon_class) tags.push(`<span class="tag">${escapeHtml(s.taxon_class)}</span>`);
+    if (s.sources) s.sources.split(',').forEach(src => tags.push(`<span class="tag">${escapeHtml(src)}</span>`));
+    if (s.epbc_status) tags.push(`<span class="tag">EPBC: ${escapeHtml(s.epbc_status)}</span>`);
+    if (s.presence_category) tags.push(`<span class="tag">${escapeHtml(s.presence_category)}</span>`);
+    if (s.wildnet_status) tags.push(`<span class="tag">NC Act: ${escapeHtml(s.wildnet_status)}</span>`);
+    el.innerHTML = `
+      <div class="species-name">${escapeHtml(s.common_name || s.scientific_name)}</div>
+      <div class="species-sci">${escapeHtml(s.scientific_name)}</div>
+      <div class="tags">${tags.join('')}</div>
+      <audio controls preload="none" src="${encodeURI(s.audio_file)}"></audio>
+      <div class="attribution">
+        Recording by ${escapeHtml(s.recordist || 'unknown')} ·
+        <a href="${s.xeno_canto_url}" target="_blank" rel="noopener">source</a> ·
+        license: ${escapeHtml((s.license || '').replace('//', ''))}
+      </div>
+    `;
+    container.appendChild(el);
+  }
+}
+
+document.getElementById('search').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase();
+  render(allSpecies.filter(s =>
+    (s.common_name || '').toLowerCase().includes(q) ||
+    (s.scientific_name || '').toLowerCase().includes(q)
+  ));
+});
+
+document.getElementById('downloadJSON').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(allSpecies, null, 2)], {type: 'application/json'});
+  triggerDownload(blob, 'bird_playlist.json');
+});
+
+document.getElementById('downloadM3U').addEventListener('click', () => {
+  let lines = ['#EXTM3U'];
+  for (const s of allSpecies) {
+    lines.push(`#EXTINF:-1,${s.common_name} (${s.scientific_name})`);
+    lines.push(`# License: ${s.license}  Recordist: ${s.recordist}  Source: ${s.xeno_canto_url}`);
+    lines.push(s.audio_file);
+  }
+  const blob = new Blob([lines.join('\n')], {type: 'audio/x-mpegurl'});
+  triggerDownload(blob, 'bird_playlist.m3u');
+});
+
+function triggerDownload(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, m => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[m]));
+}
+</script>
+</body>
+</html>

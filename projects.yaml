@@ -1,3 +1,29 @@
+- id: 1787864065542
+  title: Animal Call Playlist Builder
+  author: Melissa Wood
+  authorLink: ''
+  sourceType: party
+  party: aug-2026
+  year: 2026
+  description: >-
+    **Animal Call Playlist Builder** bridges ecological data and AI to transform
+    site coordinates into interactive, license-cleared bioacoustic playlists.
+
+
+    * **Multi-Source Aggregation**: Merges fauna data from eBird, ALA, Qld
+    WildNet, and SNES APIs.
+
+    * **Smart Audio Curation**: Automated matching of species to CC-licensed
+    audio via `Xeno-canto`.
+
+    * **Zero-Backend Gallery**: Generates `data.json` & `.m3u` playlists for
+    static deployment.
+  screenshot: projects/aug-2026/animal-call-playlist-builder/screenshot.png
+  url: pages/aug-2026/animal-call-playlist-builder/webapp/index.html
+  type: hosted
+  tags:
+    - Vibe Coded
+    - Ecology
 - id: 1784831046977
   title: Free Whaley
   author: Jonathan Yardley
@@ -64,8 +90,7 @@
     in text fields and rich editors. But it doesn't end there: confetti, sounds,
     swimming fish, growing flowers and more. Let's get the emoji party started!
   screenshot: ''
-  url: >-
-    https://chromewebstore.google.com/detail/emoji-autocomplete-party/ohphclkcacfhpjkfijdnebmidhhmllma
+  url: https://chromewebstore.google.com/detail/emoji-autocomplete-party/ohphclkcacfhpjkfijdnebmidhhmllma
   type: link
   tags:
     - Vibe Coded
@@ -95,8 +120,7 @@
 
     * **Interactive Maps:** Spatial job discovery.
   screenshot: ''
-  url: >-
-    https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc
+  url: https://calebcharpentier.com/EcoEvoJobSearcher/index.html?open=1&sort=apply_by&order=asc
   type: hosted
   tags:
     - Dashboard
