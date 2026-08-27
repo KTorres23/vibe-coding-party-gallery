@@ -1,5 +1,22 @@
 [
     {
+        "id": 1787864065542,
+        "title": "Animal Call Playlist Builder",
+        "author": "Melissa Wood",
+        "authorLink": "",
+        "sourceType": "party",
+        "party": "aug-2026",
+        "year": 2026,
+        "description": "**Animal Call Playlist Builder** bridges ecological data and AI to transform site coordinates into interactive, license-cleared bioacoustic playlists.\n\n* **Multi-Source Aggregation**: Merges fauna data from eBird, ALA, Qld WildNet, and SNES APIs.\n* **Smart Audio Curation**: Automated matching of species to CC-licensed audio via `Xeno-canto`.\n* **Zero-Backend Gallery**: Generates `data.json` & `.m3u` playlists for static deployment.",
+        "screenshot": "projects/aug-2026/animal-call-playlist-builder/screenshot.png",
+        "url": "pages/aug-2026/animal-call-playlist-builder/webapp/index.html",
+        "type": "hosted",
+        "tags": [
+            "Vibe Coded",
+            "Ecology"
+        ]
+    },
+    {
         "id": 1784831046977,
         "title": "Free Whaley",
         "author": "Jonathan Yardley",

@@ -1,0 +1,12 @@
+{
+  "site_name": "1 River Terrace, Millbank QLD 4670 (APPROXIMATE geocode — verify before relying on this)",
+  "lat": -24.878,
+  "lng": 152.318,
+  "radius_km": 10,
+  "taxonomic_classes": ["Aves", "Mammalia", "Amphibia", "Insecta", "Reptilia"],
+  "ebird_region_code": "AU-QLD",
+  "ebird_back_days": 30,
+  "ebird_api_key": "ENTER YOUR API KEY",
+  "xenocanto_api_key": "ENTER YOUR API KEY",
+  "allow_nc_licenses": false
+}
