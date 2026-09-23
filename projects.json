@@ -1,5 +1,22 @@
 [
     {
+        "id": 1790191155836,
+        "title": "East African Bird Game",
+        "author": "Brian Maiyo",
+        "authorLink": "",
+        "sourceType": "party",
+        "party": "sep-2026",
+        "year": 2026,
+        "description": "Learn to identify East African birds by sound.",
+        "screenshot": "projects/sep-2026/east-african-bird-game/screenshot.png",
+        "url": "https://platform.maiyoinstitute.org/birds/quiz",
+        "type": "hosted",
+        "tags": [
+            "Vibe Coded",
+            "Ecology"
+        ]
+    },
+    {
         "id": 1787864065542,
         "title": "Animal Call Playlist Builder",
         "author": "Melissa Wood",
